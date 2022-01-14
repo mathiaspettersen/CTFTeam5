@@ -1,6 +1,6 @@
 # CTFTeam5
 
-## Introducation
+## Introduction
 
 ## Attacker
 
