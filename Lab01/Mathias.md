@@ -36,7 +36,7 @@ Then, entering this timeframe into the Dashboard, and choosing the specified por
 
 ## 200 IQ
 
-### We are given a weird looking string with different characters that have to be decoded. As it says in the text, this string is an esolanguage. After searching for esolanguages, a Wikipedia article came up about the "Esoteric programming language", where "Brainfuck" is mentioned. This language also looks like the one we are trying to decode:
+We are given a weird looking string with different characters that have to be decoded. As it says in the text, this string is an esolanguage. After searching for esolanguages, a Wikipedia article came up about the "Esoteric programming language", where "Brainfuck" is mentioned. This language also looks like the one we are trying to decode:
 
 ![bilde](https://user-images.githubusercontent.com/70077872/149500736-b83bbf77-f15f-4ad2-8b68-0bac7f5116f0.png)
 
