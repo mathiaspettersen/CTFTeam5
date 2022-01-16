@@ -29,7 +29,7 @@ Then, entering this timeframe into the Dashboard, and choosing the specified por
 
 ## Slide into Julius Caesar DM's
 
-### Caesar cipher, put it into cyberchef and rotate the ciphers. After rotating it and trying different possibilities, the ROT number is 13, and revels sthe flag in clear text:
+Caesar cipher, put it into cyberchef and rotate the ciphers. After rotating it and trying different possibilities, the ROT number is 13, and revels sthe flag in clear text:
 
 ![bilde](https://user-images.githubusercontent.com/70077872/149499935-9c8d6648-a99a-40d1-9060-6ae23b763dd1.png)
 
