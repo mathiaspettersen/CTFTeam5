@@ -9,6 +9,21 @@ Wordpress is the underlying framwork as teh attacker uses wp-scan to bruteforce.
 
 uses 7.16.2 by checking the
 
+## More ports
+
+Had to find the exact time fram in which the scanning occurred, which was done by looking at the table in the Discover page. There is a time fram in which stands lonely:
+
+![bilde](https://user-images.githubusercontent.com/70077872/149670992-a3512899-d5be-4cc1-9b4a-79be78e1a922.png)
+
+Checking the main port of nmap, which can also be verified by looking at the last response:
+
+![bilde](https://user-images.githubusercontent.com/70077872/149671041-a3047184-b780-4c46-9809-c5e3e2d8b310.png)
+
+Then, entering this timeframe into the Dashboard, and choosing the specified port, with filtering the unique destination ports got the result of 100 ports:
+
+![bilde](https://user-images.githubusercontent.com/70077872/149670940-425cf730-fad2-467c-8bec-bbb71adcc62e.png)
+
+
 
 # Extra
 
