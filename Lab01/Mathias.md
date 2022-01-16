@@ -24,6 +24,18 @@ Then, entering this timeframe into the Dashboard, and choosing the specified por
 ![bilde](https://user-images.githubusercontent.com/70077872/149670940-425cf730-fad2-467c-8bec-bbb71adcc62e.png)
 
 
+# Bruteforce Success
+
+We previously found out that the password for the admin user was "purple1". To find the "id" field in which the correct username was found, we searched for "purple1" and looked at the packet:
+
+![bilde](https://user-images.githubusercontent.com/70077872/149674201-88ff335d-3b7f-4bf3-892c-d52e6e6fc5cd.png)
+
+This can be verified later in the packet since the variable "isAdmin" returns a boolean value of "1", meaning the Admin password was correct:
+
+![bilde](https://user-images.githubusercontent.com/70077872/149674301-1cf71a85-5fea-4175-a3c6-8e0c84467359.png)
+
+
+
 
 # Extra
 
