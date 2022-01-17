@@ -17,4 +17,6 @@ Most often, searches are viewed as `/?s=` in the URL. By entering this as a filt
 
 Checking the search result in the newest hit, it was discovered that the search was `/?s=hello+this+is+a+test`. Thus, the answer to the challenge was *hello this is a test*.
 
-![bilde](https://github.com/Gustav-Magnussen/CTFTeam5/blob/fed34ccb99994864921f08254e002888e51cef5b/Lab01/Screenshots/search_answer.PNG)
+![bilde](https://github.com/Gustav-Magnussen/CTFTeam5/blob/main/Lab01/Screenshots/search_answer.PNG)
+
+
