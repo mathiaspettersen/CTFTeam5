@@ -8,7 +8,7 @@ To confirm to the rules and regulations to perform the tasks, we replied `IKT449
 
 ## Attacker 
 
-### Attacker Mathias
+### Attacker
 
 *From which IP does the attack originate?*
 
