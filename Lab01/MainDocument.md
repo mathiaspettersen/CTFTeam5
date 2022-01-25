@@ -6,6 +6,13 @@
 
 ### Attacker Mathias
 
+*From which IP does the attack originate?*
+
+From the task given, it was apparent that the victim IP address was `10.13.37.4`. To find the attacker IP address, we filtered for `source.ip` within Elastic, where it showcased two IPs. Since `.4` was the victim, the `10.13.37.5` is the attacker since it has the most requests:
+
+![bilde](https://user-images.githubusercontent.com/70077872/150950686-69d9b703-fb9a-4ab6-921d-56da8ecf9b63.png)
+
+
 ### Search
 *The attackers performed a few searches on the site, what was the last thing he searched for?*
 
