@@ -103,11 +103,11 @@ Firstly, we had to find the exact time frame in which the scanning occurred, whi
 
 ![bilde](https://user-images.githubusercontent.com/70077872/149670992-a3512899-d5be-4cc1-9b4a-79be78e1a922.png)
 
-Secondly, it was important to filter out the port the attacker used to scan with. nMAP is a commonly used scanning and enumeration tool which 
+Secondly, it was important to filter out the port the attacker used to scan with. This was done to filter the interesting time frame, and filter out the `source.port` that was used for scanning. After filtering, port `55437` is mostly used: 
 
-![bilde](https://user-images.githubusercontent.com/70077872/149671041-a3047184-b780-4c46-9809-c5e3e2d8b310.png)
+![bilde](https://user-images.githubusercontent.com/70077872/150955489-00505b57-87e4-4f6c-b993-5e33ed7539d0.png)
 
-Then, entering this timeframe into the Dashboard, and choosing the specified port, with filtering the unique destination ports got the result of 100 ports:
+Then, entering this timeframe into the Dashboard, and choosing the specified port, with filtering the unique destination ports (``) got the result of 100 ports:
 
 ![bilde](https://user-images.githubusercontent.com/70077872/149670940-425cf730-fad2-467c-8bec-bbb71adcc62e.png)
 
