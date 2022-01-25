@@ -1,6 +1,6 @@
 # CTFTeam5
 
-## Introduction Mathias
+## Introduction
 
 *The attack occured from Jan 8, 2022 @ 23:55:00.000 to Jan 9, 2022 @ 00:10:00.000... [truncated]*
 
@@ -58,7 +58,11 @@ This can be verified later in the packet since the variable "isAdmin" returns a 
 
 ## Framework 
 
-### name V
+### name
+
+*What framework is used to host the site running on port 80 on the victim? (all lowercase)*
+
+As found in Bruteforce Tool, the tool to perform the scanning was `wp-scan`. After researching WP-scan, it was apparent that it is used for bruteforcing the Wordpress framework's login page. As such, the underlying framework running on port 80 is Wordpress.
 
 ### Themes
 *The attacker replaced the 404.php page of one of the themes with a reverse shell. Which theme was compromised? (all lowercase, one word)*
