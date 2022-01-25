@@ -73,7 +73,15 @@ It was quickly discovered that the page in question was in fact a Wordpress site
 
 By expanding one of the five this, it was discovered that the compromised theme was *twentytwentyone*.
 
-## Kibana V
+## Kibana
+
+### Kibana
+
+*What version of Kibana is the site running?*
+
+Kibana let's you visualize the Elastic search, and uses the KQL syntax language. To find the version number, we searched around Elastic and pressed the button at the top right corner. This tells the version number to be `7.16.2`:
+
+![bilde](https://user-images.githubusercontent.com/70077872/150954177-5b57d0e3-dd93-4d85-8cae-b588395799b7.png)
 
 ## Logs
 
