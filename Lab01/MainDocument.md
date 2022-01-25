@@ -30,7 +30,17 @@ Checking the search result in the newest hit, it was discovered that the search 
 
 ### Bruteforce Tool V
 
-### Bruteforce Success V
+### Bruteforce Success
+
+*What is the content of the _id field where the correct password was guessed from bruteforcing?*
+
+We previously found out that the password for the admin user was "purple1". To find the "id" field in which the correct username was found, we searched for "purple1" and looked at the packet. This was done since the system most likely accepts the correct password and gives the successful message back in the same packet:
+
+![bilde](https://user-images.githubusercontent.com/70077872/149674201-88ff335d-3b7f-4bf3-892c-d52e6e6fc5cd.png)
+
+This can be verified later in the packet since the variable "isAdmin" returns a boolean value of "1", meaning the Admin password was correct:
+
+![bilde](https://user-images.githubusercontent.com/70077872/149674301-1cf71a85-5fea-4175-a3c6-8e0c84467359.png)
 
 ## Files
 
