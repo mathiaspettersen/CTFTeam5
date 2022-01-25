@@ -44,6 +44,8 @@ Checking the search result in the newest hit, it was discovered that the search 
 
 It was quickly discovered that the page in question was in fact a Wordpress site.  By entering "theme and 404" as a search word, we were left with 16 hits. For the attacker to fetch the  desired theme, an http `GET` request was required. By filtering on just GET requests, there were 5 hits left. 
 
+![bilde](https://github.com/Gustav-Magnussen/CTFTeam5/blob/main/Lab01/Screenshots/compromised_theme.PNG)
+
 By expanding one of the five this, it was discovered that the compromised theme was *twentytwentyone*.
 
 ## Kibana V
