@@ -107,7 +107,7 @@ Secondly, it was important to filter out the port the attacker used to scan with
 
 ![bilde](https://user-images.githubusercontent.com/70077872/150955489-00505b57-87e4-4f6c-b993-5e33ed7539d0.png)
 
-Then, entering this timeframe into the Dashboard, and choosing the specified port, with filtering the unique destination ports (``) got the result of 100 ports:
+Then, entering this timeframe into the Dashboard, and choosing the specified port, with filtering the unique destination ports (`Unique count of destination.port`) got the result of 100 ports:
 
 ![bilde](https://user-images.githubusercontent.com/70077872/149670940-425cf730-fad2-467c-8bec-bbb71adcc62e.png)
 
