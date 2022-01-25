@@ -71,6 +71,8 @@ By expanding one of the five this, it was discovered that the compromised theme 
 
 ### More Ports
 
+*It seems to have occured a portscan at the start of the attack, how many ports where tested?*
+
 Had to find the exact time fram in which the scanning occurred, which was done by looking at the table in the Discover page. There is a time fram in which stands lonely:
 
 ![bilde](https://user-images.githubusercontent.com/70077872/149670992-a3512899-d5be-4cc1-9b4a-79be78e1a922.png)
