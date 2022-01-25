@@ -2,6 +2,10 @@
 
 ## Introduction Mathias
 
+*The attack occured from Jan 8, 2022 @ 23:55:00.000 to Jan 9, 2022 @ 00:10:00.000... [truncated]*
+
+To confirm to the rules and regulations to perform the tasks, we replied `IKT449{i_will_behave}`.
+
 ## Attacker 
 
 ### Attacker Mathias
