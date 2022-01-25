@@ -99,11 +99,11 @@ Kibana let's you visualize the Elastic search, and uses the KQL syntax language.
 
 *It seems to have occured a portscan at the start of the attack, how many ports where tested?*
 
-Had to find the exact time fram in which the scanning occurred, which was done by looking at the table in the Discover page. There is a time fram in which stands lonely:
+Firstly, we had to find the exact time frame in which the scanning occurred, which was done by looking at the table in the `Discover` page. There is a time frame which stands lonely and separated:
 
 ![bilde](https://user-images.githubusercontent.com/70077872/149670992-a3512899-d5be-4cc1-9b4a-79be78e1a922.png)
 
-Checking the main port of nmap, which can also be verified by looking at the last response:
+Secondly, it was important to filter out the port the attacker used to scan with. nMAP is a commonly used scanning and enumeration tool which 
 
 ![bilde](https://user-images.githubusercontent.com/70077872/149671041-a3047184-b780-4c46-9809-c5e3e2d8b310.png)
 
