@@ -83,7 +83,13 @@ As this is still providing a lot of entries in the logs and expanding the entrie
 
 ![S2](https://github.com/Gustav-Magnussen/CTFTeam5/blob/main/Lab01/Screenshots/strangefile.PNG)
 
-## Firefox V
+## Firefox
+
+### Firefox
+
+>*What version of firefox is the attacker using? (two digits)*
+
+
 
 ## Framework 
 
