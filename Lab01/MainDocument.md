@@ -89,6 +89,9 @@ As this is still providing a lot of entries in the logs and expanding the entrie
 
 >*What version of firefox is the attacker using? (two digits)*
 
+Since we previously know that the attacker's IP is `10.13.37.5`, we searched for `firefox` within the search field. Additionally, to filter out the attacker's agent, we added a filter with `source.ip.keyword: 10.13.37.5`. This yields several results, where it is apparent that the Firefox version is `91`:
+
+![bilde](https://user-images.githubusercontent.com/70077872/151168512-5e94022f-3351-4515-af98-a60197222131.png)
 
 
 ## Framework 
