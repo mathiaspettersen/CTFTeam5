@@ -2,7 +2,7 @@
 
 ## Introduction
 
-*The attack occured from Jan 8, 2022 @ 23:55:00.000 to Jan 9, 2022 @ 00:10:00.000... [truncated]*
+>*The attack occured from Jan 8, 2022 @ 23:55:00.000 to Jan 9, 2022 @ 00:10:00.000... [truncated]*
 
 To confirm to the rules and regulations to perform the tasks, we replied `IKT449{i_will_behave}`.
 
@@ -10,7 +10,7 @@ To confirm to the rules and regulations to perform the tasks, we replied `IKT449
 
 ### Attacker
 
-*From which IP does the attack originate?*
+>*From which IP does the attack originate?*
 
 From the task given, it was apparent that the victim IP address was `10.13.37.4`. To find the attacker IP address, we filtered for `source.ip` within Elastic, where it showcased two IPs. Since `.4` was the victim, the `10.13.37.5` is the attacker since it has the most requests:
 
@@ -18,7 +18,7 @@ From the task given, it was apparent that the victim IP address was `10.13.37.4`
 
 
 ### Search
-*The attackers performed a few searches on the site, what was the last thing he searched for?*
+>*The attackers performed a few searches on the site, what was the last thing he searched for?*
 
 Most often, searches are viewed as `/?s=` in the URL. By entering this as a filter, in addtion to the attackers IP address, we were left with two hits. 
 
@@ -36,7 +36,7 @@ Checking the search result in the newest hit, it was discovered that the search 
 
 ### Bruteforce Success
 
-*What is the content of the _id field where the correct password was guessed from bruteforcing?*
+>*What is the content of the _id field where the correct password was guessed from bruteforcing?*
 
 We previously found out that the password for the admin user was "purple1". To find the "id" field in which the correct username was found, we searched for "purple1" and looked at the packet. This was done since the system most likely accepts the correct password and gives the successful message back in the same packet:
 
@@ -60,12 +60,12 @@ This can be verified later in the packet since the variable "isAdmin" returns a 
 
 ### name
 
-*What framework is used to host the site running on port 80 on the victim? (all lowercase)*
+>*What framework is used to host the site running on port 80 on the victim? (all lowercase)*
 
 As found in Bruteforce Tool, the tool to perform the scanning was `wp-scan`. After researching WP-scan, it was apparent that it is used for bruteforcing the Wordpress framework's login page. As such, the underlying framework running on port 80 is Wordpress.
 
 ### Themes
-*The attacker replaced the 404.php page of one of the themes with a reverse shell. Which theme was compromised? (all lowercase, one word)*
+>*The attacker replaced the 404.php page of one of the themes with a reverse shell. Which theme was compromised? (all lowercase, one word)*
 
 It was quickly discovered that the page in question was in fact a Wordpress site.  By entering "theme and 404" as a search word, we were left with 16 hits. For the attacker to fetch the  desired theme, an http `GET` request was required. By filtering on just GET requests, there were 5 hits left. 
 
@@ -77,7 +77,7 @@ By expanding one of the five this, it was discovered that the compromised theme 
 
 ### Kibana
 
-*What version of Kibana is the site running?*
+>*What version of Kibana is the site running?*
 
 Kibana let's you visualize the Elastic search, and uses the KQL syntax language. To find the version number, we searched around Elastic and pressed the button at the top right corner. This tells the version number to be `7.16.2`:
 
@@ -97,7 +97,7 @@ Kibana let's you visualize the Elastic search, and uses the KQL syntax language.
 
 ### More Ports
 
-*It seems to have occured a portscan at the start of the attack, how many ports where tested?*
+>*It seems to have occured a portscan at the start of the attack, how many ports where tested?*
 
 Firstly, we had to find the exact time frame in which the scanning occurred, which was done by looking at the table in the `Discover` page. There is a time frame which stands lonely and separated:
 
