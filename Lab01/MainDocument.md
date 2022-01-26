@@ -12,7 +12,7 @@ To confirm to the rules and regulations to perform the tasks, we replied `IKT449
 
 >*From which IP does the attack originate?*
 
-From the task given, it was apparent that the victim IP address was `10.13.37.4`. To find the attacker IP address, we filtered for `source.ip` within Elastic, where it showcased two IPs. Since `.4` was the victim, the `10.13.37.5` is the attacker since it has the most requests:
+From the task given, it was apparent that the victim IP address was `10.13.37.4`. To find the attacker IP address, we filtered for `source.ip` within Elastic, where it showcased two IPs. Since `.4` was the victim, and `127.0.0.1` is the loopback adapter of the local host, the `10.13.37.5` is the attacker since it has the most requests as well:
 
 ![bilde](https://user-images.githubusercontent.com/70077872/150950686-69d9b703-fb9a-4ab6-921d-56da8ecf9b63.png)
 
