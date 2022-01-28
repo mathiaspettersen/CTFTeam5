@@ -189,9 +189,9 @@ Expanding this entry we are able to see that the admin password is `purple1`.
 ### User what now?
 >*What was the first user they got access to ? (on the machine itself)*
 
-As is found earlier the framework `wordpress` is running on port 80 on the machine, given that the attacker gained access to the webserver framework first it would make sense that landing the victim machine the attacker would initially have access to user running the webserver. Using best practice when setting up a webserver on a Ubuntu platform is to use the `www-data` user. Filtering the logs using `user.name:www-data`shows that a number of commands have been executed on the machine including commands that setup a more user-friendly enviroment for further escalation. Therefore the first user the attacker got access to on the machine is `www-data`.
+As is found earlier the framework `wordpress` is running on port 80 on the machine, given that the attacker gained access to the webserver framework first it would make sense that landing the victim machine the attacker would initially have access to user running the webserver. Using best practice when setting up a webserver on a Ubuntu platform is to use the `www-data` user. Filtering the logs using `user.name:www-data`shows that a number of commands have been executed on the machine originally centered around webserver running (running /usr/bin/apache2) and later including commands that setup a more user-friendly enviroment for further escalation. Therefore the first user the attacker got access to on the machine is `www-data`.
 
-![U1](https://github.com/Gustav-Magnussen/CTFTeam5/blob/main/Lab01/Screenshots/www-data.PNG)
+![U1](https://github.com/Gustav-Magnussen/CTFTeam5/blob/main/Lab01/Screenshots/www-data1.PNG)
 
 ### Login Time V
 
