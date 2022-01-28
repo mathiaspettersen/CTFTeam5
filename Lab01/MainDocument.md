@@ -35,14 +35,14 @@ Checking the search result in the newest hit, it was discovered that the search 
 
 In order to find the total amount of unique passwords tried during the bruteforce attack the total amount of unsuccessfull and the successfull attempt have to be added. Filtering the logs by setting the `request.keyword` to `Incorrect` only shows entries where there was a unsuccessfull login attempt. Knowing that there were `670` unsuccessfull login attempts and one successfull one the total amount of tried passwords are `671`.
 
-![B1](https://github.com/Gustav-Magnussen/CTFTeam5/blob/main/Lab01/Screenshots/Bruteforce1.PNG)
+![B2](https://github.com/Gustav-Magnussen/CTFTeam5/blob/main/Lab01/Screenshots/incorrect.PNG)
 
 ### Bruteforce Tool
 >*From the logs one can conlude that a bruteforce has taken place. What tool has been used to perform this attack? (all lowercase)*
 
 In order to find out what type of tool was used to perform the bruteforce attack the phrase `password` was searched in Elastic. This resulted in a number of entries where the phrase `Incorrect username or password` were present. Expanding one of these entries and looking at the `user-agent.original` field shows that a tool called `wpscan` is used, which is a Wordpress bruteforcing tool.
 
-![B2](https://github.com/Gustav-Magnussen/CTFTeam5/blob/main/Lab01/Screenshots/incorrect.PNG)
+![B1](https://github.com/Gustav-Magnussen/CTFTeam5/blob/main/Lab01/Screenshots/Bruteforce1.PNG)
 
 ### Bruteforce Success
 
