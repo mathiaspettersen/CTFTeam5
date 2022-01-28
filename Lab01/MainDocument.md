@@ -193,7 +193,7 @@ As is found earlier the framework `WordPress` is running on port 80 on the machi
 
 ![U1](https://user-images.githubusercontent.com/59768512/151539551-760f5cf1-220e-4f34-8c32-19d6f0dfbe8f.png)
 
-### Login Time V
+### Login Time
 
 >*At what time did the attacker login to the user: 'user'? (Answer down to the second as: xx:yy:zz)*
 
