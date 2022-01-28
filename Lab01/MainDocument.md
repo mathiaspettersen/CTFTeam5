@@ -22,11 +22,11 @@ From the task given, it was apparent that the victim IP address was `10.13.37.4`
 
 Most often, searches are viewed as `/?s=` in the URL. By entering this as a filter, in addtion to the attackers IP address, we were left with two hits. 
 
-![bilde](https://github.com/Gustav-Magnussen/CTFTeam5/blob/fed34ccb99994864921f08254e002888e51cef5b/Lab01/Screenshots/search_filter_results.PNG)
+![image](https://user-images.githubusercontent.com/72946914/151540795-78551aae-f0e3-492f-8c8f-e91a2477b07b.png)
 
 Checking the search result in the newest hit, it was discovered that the search was `/?s=hello+this+is+a+test`. Thus, the answer to the challenge was `hello this is a test`.
 
-![bilde](https://github.com/Gustav-Magnussen/CTFTeam5/blob/main/Lab01/Screenshots/search_answer.PNG)
+![image](https://user-images.githubusercontent.com/72946914/151540857-79cc6c7b-d8f4-4dbc-98bb-1d8b2c62ef87.png)
 
 ## Bruteforce
 
@@ -107,7 +107,7 @@ As found in Bruteforce Tool, the tool to perform the scanning was `wp-scan`. Aft
 
 It was quickly discovered that the page in question was in fact a Wordpress site.  By entering "theme and 404" as a search word, we were left with 16 hits. For the attacker to fetch the  desired theme, an http `GET` request was required. By filtering on just GET requests, there were 5 hits left. 
 
-![bilde](https://github.com/Gustav-Magnussen/CTFTeam5/blob/main/Lab01/Screenshots/compromised_theme.PNG)
+![image](https://user-images.githubusercontent.com/72946914/151540643-0b794f82-bf29-457c-86bc-e1d63c8dc95b.png)
 
 By expanding one of the five this, it was discovered that the compromised theme was *twentytwentyone*.
 
