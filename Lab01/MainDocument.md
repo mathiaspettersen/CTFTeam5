@@ -48,7 +48,7 @@ In order to find out what type of tool was used to perform the bruteforce attack
 
 >*What is the content of the _id field where the correct password was guessed from bruteforcing?*
 
-We previously found out that the password for the admin user was "purple1". To find the "id" field in which the correct username was found, we searched for "purple1" and looked at the packet. This was done since the system most likely accepts the correct password and gives the successful message back in the same packet:
+We previously found out that the password for the admin user was "purple1". To find the "id" field in which the correct username was found, we searched for "purple1" and looked at the packet. This was done since the system most likely accepts the correct password and gives the successful message back in the same packet. From there, the correct answer is `ObjrO34BeTOdFhttNk4J`:
 
 ![bilde](https://user-images.githubusercontent.com/70077872/149674201-88ff335d-3b7f-4bf3-892c-d52e6e6fc5cd.png)
 
