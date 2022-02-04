@@ -35,3 +35,12 @@ First, enter the admin details: `admin`:`ramirez`:
 Then, the flag is in the dashboard:
 
 ![image](https://user-images.githubusercontent.com/70077872/152356590-f2780792-8f93-4e09-8516-cd76fb041a90.png)
+
+
+## User
+
+![image](https://user-images.githubusercontent.com/70077872/152495619-67779e5c-e640-45c4-9975-b8c45adf50ce.png)
+
+
+![image](https://user-images.githubusercontent.com/70077872/152495542-ded4206f-a13d-4897-8b72-50a2aacb24c5.png)
+
