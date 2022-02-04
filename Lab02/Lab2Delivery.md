@@ -39,7 +39,8 @@ Then, the flag is in the dashboard:
 
 ## User
 
-![image](https://user-images.githubusercontent.com/70077872/152495619-67779e5c-e640-45c4-9975-b8c45adf50ce.png)
+![image](https://user-images.githubusercontent.com/70077872/152495794-2651a028-68b2-4ed7-bf23-f2e5365c0312.png)
+
 
 
 ![image](https://user-images.githubusercontent.com/70077872/152495542-ded4206f-a13d-4897-8b72-50a2aacb24c5.png)
