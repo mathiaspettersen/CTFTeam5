@@ -13,4 +13,4 @@ When access to the `404.php` file is made, one has to find a proper reverse shel
 
 Now that the file is updated and saved with our desired PHP reverse shell script, we have to set up a **listener** which listens on the connection coming from the victim's website server. Common binaries are **nc**, **ncat**, and **netcat**. In this instance we are using **ncat** as it comes from the same developers as **nmap**, and provides proper encryption within the reverse shell connection.
 
-> The command for listening is: nc -nlvp 9001
+> The command for listening is: ncat -nlvp 9001
