@@ -36,7 +36,7 @@ This search shows that the password `ramirez` is located at line `1337` in the `
 
 To figure out which ports were open, we chose to use `nmap`. This is a free and open security scanner which is used to gain information about hosts and running services on a network, includning information about open ports by performing port scanning. 
 
-We used `nmap` to scan our given target IP address, along with three different input paramters. `-T4` is used to specify the timing and performance. Since we wanted a specific and reliable scan, `-T4` was chosen before `-T5` as the latter tends to be too strong and fast, and can as a consequence omit important information. 
+We used `nmap` to scan our given target IP address, along with three different switches. `-T4` is used to specify the timing and performance. Since we wanted a specific and reliable scan, `-T4` was chosen before `-T5` as the latter tends to be too strong and fast, and can as a consequence omit important information. 
 
 Next, to specify the service and version detection wanted, `-A` is used,  which includes an OS dectection, version detection, script scanning and traceroute. (Spesifisere mer hvorfor)
 
