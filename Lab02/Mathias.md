@@ -13,4 +13,24 @@ When access to the `404.php` file is made, one has to find a proper reverse shel
 
 Now that the file is updated and saved with our desired PHP reverse shell script, we have to set up a **listener** which listens on the connection coming from the victim's website server. Common binaries are **nc**, **ncat**, and **netcat**. In this instance we are using **ncat** as it comes from the same developers as **nmap**, and provides proper encryption within the reverse shell connection.
 
-> The command for listening is: ncat -nlvp 9001
+> The command for listening is: ncat -nlvp 9001 
+
+The command has four switches; -nlvp. These are: 
+
+* -n : Do not resolve hostnames via DNS
+* -l : Bind and listen for incoming connections
+* -v : Set verbosity level
+* -p : Specify source port to use
+
+Once the listener is set up, all is ready for the connection to take place. Activating the PHP reverse shell script has to be manually done by traversing into the general Wordpress directory that holds the themes and the specific file. The directory path is shown below:
+
+
+
+
+After the file is activated, **ncat** sees a connection coming in on port 9001, and runs a basic shell based on that connection. As seen in the picture below, running **whoami** showcases that we are `www-data` on the `victim` box. Within the user `user` folder, there are two text files; `note.txt` and `user.txt`. We do not yet have the permission to view the contents of `user.txt`, but luckily, `note.txt` contains the credentials for `user`. Once logging in with the password given, we are able to view `user.txt` and collect the final flag:
+
+
+
+
+Answer: `IKT449{great_job_root_will_come_later}
+
