@@ -13,6 +13,9 @@
 
 ![wpbrute](https://user-images.githubusercontent.com/59768512/152354596-62286464-89d2-4210-a0bc-732890f5c6cf.png)
 
+![sucess](https://user-images.githubusercontent.com/59768512/154031211-98d7d02a-71f8-4d48-b693-0c3fdb49688f.png)
+
+
 Use `sublime` with the `CTRL + F` search feature, and search for `ramirez` since its the password WPscan showed us: 
 
 
