@@ -41,11 +41,11 @@ This search shows that the password `ramirez` is located at line `1337` in the `
 
 >*Get access to the admin dashboard and provide the flag found.*
 
-By using the login password that was obtained in the "Admin" task using WPscan, one can log in through WordPress login portal using the correct administrator username and password. First, enter the admin details: Username: `admin`. Password: `ramirez`.
+By using the login password that was obtained in the "Admin" task using WPscan, acsess to the admin user can be gained using the correct administrator username and password. First, enter the admin details: Username: `admin`. Password: `ramirez`.
 
 ![image](https://user-images.githubusercontent.com/70077872/152356337-2013f9ae-2120-476f-be58-a3a0516eb1e9.png)
 
-After successfully logging in to the admin user, the flag will be visible on the dashboard. The flag is marked as (admin_access_is_not_for_ everyone) under "Your Recent Drafts". This is the flag that answers the task.
+Then, after successfully logging in to the admin user, the flag will be visible on the dashboard. The flag is marked as (admin_access_is_not_for_ everyone) under "Your Recent Drafts". This is the flag that answers the task.
 
 ![image](https://user-images.githubusercontent.com/70077872/152356590-f2780792-8f93-4e09-8516-cd76fb041a90.png)
 
