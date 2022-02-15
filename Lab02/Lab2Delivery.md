@@ -1,5 +1,4 @@
 ## Number
->*On which line in rockyou.txt do you find the correct password for the admin user in wordpress?*
 
 Knowing that the server is running WordPress on port 80 the tool wpscan can be used to scan the website and look for possible vulnerabilities and interesting directories or files. Using the wpscan tool a scan of the website can be performed using the command:
 
@@ -42,7 +41,7 @@ This search shows that the password `ramirez` is located at line `1337` in the `
 
 >*Get access to the admin dashboard and provide the flag found.*
 
-By using the login password that was retrieved in the "Admin" task using WPscan, one can log in to the WordPress dashboard with the correct administrator username and password. First, enter the admin details: Username: `admin`. Password: `ramirez`.
+By using the login password that was obtained in the "Admin" task using WPscan, one can log in through WordPress login portal using the correct administrator username and password. First, enter the admin details: Username: `admin`. Password: `ramirez`.
 
 ![image](https://user-images.githubusercontent.com/70077872/152356337-2013f9ae-2120-476f-be58-a3a0516eb1e9.png)
 
