@@ -41,7 +41,7 @@ This search shows that the password `ramirez` is located at line `1337` in the `
 
 >*Get access to the admin dashboard and provide the flag found.*
 
-By using the login password that was obtained in the "Admin" task using WPscan, acsess to the admin user will be gained using the correct username and password. First, enter the login details: Username: `admin`. Password: `ramirez`.
+By using the login password that was obtained in the `rockyou.txt` file using WPscan, acsess to the admin user will be gained using the correct username and password. First, enter the login details: Username: `admin`. Password: `ramirez`.
 
 ![image](https://user-images.githubusercontent.com/70077872/152356337-2013f9ae-2120-476f-be58-a3a0516eb1e9.png)
 
