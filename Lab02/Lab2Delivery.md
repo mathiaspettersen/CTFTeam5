@@ -21,6 +21,8 @@ Use `sublime` with the `CTRL + F` search feature, and search for `ramirez` since
 
 ## Ports
 
+>*What ports are open on the host? (answer in ascending order)*
+
 ![image](https://user-images.githubusercontent.com/72946914/152356071-995428fe-be9c-4fe4-83ca-b7526130de09.png)
 
 
@@ -38,6 +40,8 @@ Then, the flag is in the dashboard:
 
 
 ## User
+
+>*Get access to the user account, remember what you saw in the logs on how to do this. Provide the flag in user.txt*
 
 ![image](https://user-images.githubusercontent.com/70077872/152762635-bb95d4b0-710a-4567-b918-d58e29b95c24.png)
 
