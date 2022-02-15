@@ -73,7 +73,7 @@ Now that the file is updated and saved with our desired PHP reverse shell script
 
 The command has four switches; -nlvp. These are: 
 
- -n : Do not resolve hostnames via DNS
+* -n : Do not resolve hostnames via DNS
 * -l : Bind and listen for incoming connections
 * -v : Set verbosity level
 * -p : Specify source port to use
