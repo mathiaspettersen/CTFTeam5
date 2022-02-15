@@ -87,6 +87,7 @@ Once the listener is set up, all is ready for the connection to take place. Acti
 ![image](https://user-images.githubusercontent.com/70077872/152495938-3446f01d-5977-45d4-9c14-c104ef5c6837.png)
 
 
+After the file is activated, **ncat** sees a connection coming in on port 9001, and runs a basic shell based on that connection. As seen in the picture below, running **whoami** showcases that we are `www-data` on the `victim` box. Within the user `user` folder, there are two text files; `note.txt` and `user.txt`. We do not yet have the permission to view the contents of `user.txt`, but luckily, `note.txt` contains the credentials for `user`. Once logging in with the password given, we are able to view `user.txt` and collect the final flag:
 
 
 ![image](https://user-images.githubusercontent.com/70077872/152495794-2651a028-68b2-4ed7-bf23-f2e5365c0312.png)
