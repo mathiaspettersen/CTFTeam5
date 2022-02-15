@@ -32,7 +32,7 @@ This search shows that the password `ramirez` is located at line `1337` in the `
 
 ## Ports
 
-> What ports are open on the host? (answer in descending order)
+> What ports are open on the host? (answer in ascending order)
 
 To figure out which ports were open, we chose to use `nmap`. This is a free and open security scanner which is used to gain information about hosts and running services on a network, includning information about open ports by performing port scanning. 
 
@@ -44,7 +44,7 @@ Finally, since we wanted information about all ports available, `-p-` states tha
 
 ![image](https://user-images.githubusercontent.com/72946914/152356071-995428fe-be9c-4fe4-83ca-b7526130de09.png)
 
-The result of the scan can be viewed in the image above. The output states that port 22, 80 and 1337 are open ports, which in descending order converts to the flag which is **1337, 80, 22.** 
+The result of the scan can be viewed in the image above. The output states that port 22, 80 and 1337 are open ports, which in ascending order converts to the flag which is `IKT449{22,80,1338}`. 
 
 ## Admin
 
