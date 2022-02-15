@@ -15,21 +15,22 @@ Trying to access the `/wp-admin/` directory by entering the webpage `http://10.2
 
 ![admin](https://user-images.githubusercontent.com/59768512/152354961-d49d19a1-0f5e-4793-92c7-04fdc1484d28.png)
 
-In order to find a username and password combo that allows for access to the admin dashboard the wpscan tool is used again. This time only using the `--passwords` which allows for bruteforce attempts on password of discovered users. Using this option also requires a wordlist to aquire passwords to test from, here the `rockyou.txt` wordlist is choosen.
+In order to find a username and password combo that allows for access to the admin dashboard the wpscan tool is used again. This time only using the `--passwords` which allows for bruteforce attempts on password of discovered users. Using this option also requires a wordlist to aquire passwords to test from, here the `rockyou.txt` wordlist is chosen.
 
 ![wpbrute](https://user-images.githubusercontent.com/59768512/152354596-62286464-89d2-4210-a0bc-732890f5c6cf.png)
 
+Running this command the wpscan tool attempts to find valid users on the wordpress site by looking for mentions in places like created posts. Using this technique the user `admin` is quickly discovered.
+
 ![adminuser](https://user-images.githubusercontent.com/59768512/154031838-81c8435c-5538-4749-b4b6-2e8b9d4883fd.png)
 
+Having found this user the tool starts a bruteforce attack against the aforementioned admin login site using the `admin` username and passwords from the `rockyou.txt` wordlist.
 
 ![sucess](https://user-images.githubusercontent.com/59768512/154031211-98d7d02a-71f8-4d48-b693-0c3fdb49688f.png)
 
-
-Use `sublime` with the `CTRL + F` search feature, and search for `ramirez` since its the password WPscan showed us: 
-
-
+After a very short scan the wpscan tool recognises the wordpress administrator credentials as `admin:ramirez`. In order to actually find the line in `rockyou.txt` where the password `ramirez` is located the `rockyou.txt` file is opened using the text editor `sublime`. Within `sublime` the `CTRL + F` search feature can be used to search for `ramirez`.
 
 ![image](https://user-images.githubusercontent.com/70077872/152354630-5cca4df8-3ad0-4971-817d-d4cd3695bb33.png)
 
+This search shows that the password `ramirez` is located at line `1337` in the `rockyou.txt` wordlist. 
 
 ![image](https://user-images.githubusercontent.com/59768512/152512225-2c75232a-08ae-4c57-b456-090709dcdf46.png)
