@@ -7,3 +7,10 @@ As the logs also state, the attacker put a reverse shell within the `404.php` fi
 > Why a reverse shell? A reverse shell enables the attacker to make the victim connect to us, making it more straightforward than gaining a regular shell. Since we already have access to the Wordpress site, using a reverse shell is one of the "easiest" ways of gaining a terminal connection.
 
 When access to the `404.php` file is made, one has to find a proper reverse shell script to enter. There are many different reverse shells based on language, terminal/non-terminal, and resources available. In this instance, we know the webserver runs PHP (as the file is named 404.php), making it feasible to find a reverse shell written in PHP. Doing a quick Google search for "reverse shell php" results in the Pentest Monkey's GitHub repository: https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php. This is a widely used script for PHP reverse shell, and is something we will try. The picture below showcases that the `404.php` file contents has been replaced with the PHP reverse shell, and that the IP and PORT is changed according to our IP and our desired listening port:
+
+
+
+
+Now that the file is updated and saved with our desired PHP reverse shell script, we have to set up a **listener** which listens on the connection coming from the victim's website server. Common binaries are **nc**, **ncat**, and **netcat**. In this instance we are using **ncat** as it comes from the same developers as **nmap**, and provides proper encryption within the reverse shell connection.
+
+> The command for listening is: nc -nlvp 9001
