@@ -73,13 +73,10 @@ Now that the file is updated and saved with our desired PHP reverse shell script
 
 The command has four switches; -nlvp. These are: 
 
--n : Do not resolve hostnames via DNS
-
--l : Bind and listen for incoming connections
-
--v : Set verbosity level
-
--p : Specify source port to use
+ -n : Do not resolve hostnames via DNS
+* -l : Bind and listen for incoming connections
+* -v : Set verbosity level
+* -p : Specify source port to use
 
 Once the listener is set up, all is ready for the connection to take place. Activating the PHP reverse shell script has to be manually done by traversing into the general Wordpress directory that holds the themes and the specific file. The directory path is shown below:
 
