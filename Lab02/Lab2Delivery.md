@@ -29,7 +29,9 @@ After a very short scan, the wpscan tool recognizes the WordPress administrator 
 
 ![image](https://user-images.githubusercontent.com/70077872/152354630-5cca4df8-3ad0-4971-817d-d4cd3695bb33.png)
 
-This search shows that the password `ramirez` is located at line `1337` in the `rockyou.txt` wordlist. Meaning that the correct answer is `IKT449{1337}` 
+This search shows that the password `ramirez` is located at line `1337` in the `rockyou.txt` wordlist. 
+
+Answer:`IKT449{1337}` 
 
 ## Ports
 
