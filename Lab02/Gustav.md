@@ -3,7 +3,7 @@
 
 >*On which line in rockyou.txt do you find the correct password for the admin user in wordpress?*
 
-Knowing that the server is runing wordpress on port 80 the tool wpscan can be used to scan the website and look for possible vulnerabilities and interesting directories or files. A wpscan can be performed using the command:
+Knowing that the server is running wordpress on port 80 the tool wpscan can be used to scan the website and look for possible vulnerabilities and interesting directories or files. A wpscan can be performed using the command:
 
 ![wpscan](https://user-images.githubusercontent.com/59768512/152354724-03a29621-df1f-438f-8fe7-a5e1ccd7a163.png)
 
