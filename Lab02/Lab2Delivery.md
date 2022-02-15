@@ -100,4 +100,4 @@ After the file is activated, **ncat** sees a connection coming in on port 9001, 
 ![image](https://user-images.githubusercontent.com/70077872/152496009-95482ebb-11eb-4878-bd5d-b28e4a5ad649.png)
 
 
-> Answer: `IKT449{great_job_root_will_come_later}`
+Answer: `IKT449{great_job_root_will_come_later}`
