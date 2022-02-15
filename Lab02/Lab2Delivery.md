@@ -40,7 +40,7 @@ We used `nmap` to scan our given target IP address, along with three different s
 
 Next, to specify the service and version detection wanted, `-A` is used,  which includes an OS dectection, version detection, script scanning and traceroute. (Spesifisere mer hvorfor)
 
-Finally, since we wanted information about all ports available, `-p-` states that we want information about all ports, i.e. from 0 to 65 365. 
+Finally, since we wanted information about all ports available, `-p-` states that we want information about all ports, i.e. from 0 to 65 535. 
 
 ![image](https://user-images.githubusercontent.com/72946914/152356071-995428fe-be9c-4fe4-83ca-b7526130de09.png)
 
