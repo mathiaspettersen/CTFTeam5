@@ -36,7 +36,7 @@ Use `sublime` with the `CTRL + F` search feature, and search for `ramirez` since
 
 >*Get access to the admin dashboard and provide the flag found.*
 
-First, enter the admin details: `admin`:`ramirez`:
+By using the login password that was retrieved in the "Admin" task using WPscan, one can log in to the WordPress dashboard with the correct administrator username and password. First, enter the admin details: Username: `admin`. Password: `ramirez`.
 
 ![image](https://user-images.githubusercontent.com/70077872/152356337-2013f9ae-2120-476f-be58-a3a0516eb1e9.png)
 
