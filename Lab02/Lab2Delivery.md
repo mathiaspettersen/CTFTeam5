@@ -45,7 +45,7 @@ By using the login password that was retrieved in the "Admin" task using WPscan,
 
 ![image](https://user-images.githubusercontent.com/70077872/152356337-2013f9ae-2120-476f-be58-a3a0516eb1e9.png)
 
-Then, the flag is in the dashboard:
+After successfully logging in to the admin user, the flag will be visible on the dashboard. The flag is marked as (admin_access_is_not_for_ everyone) under "Your Recent Drafts". This is the flag that answers the task.
 
 ![image](https://user-images.githubusercontent.com/70077872/152356590-f2780792-8f93-4e09-8516-cd76fb041a90.png)
 
