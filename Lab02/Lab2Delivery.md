@@ -57,12 +57,12 @@ As the logs also state, the attacker put a reverse shell within the `404.php` fi
 
 When access to the `404.php` file is made, one has to find a proper reverse shell script to enter. There are many different reverse shells based on language, terminal/non-terminal, and resources available. In this instance, we know the webserver runs PHP (as the file is named 404.php), making it feasible to find a reverse shell written in PHP. Doing a quick Google search for "reverse shell php" results in the Pentest Monkey's GitHub repository: https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php. This is a widely used script for PHP reverse shell, and is something we will try. The picture below showcases that the `404.php` file contents has been replaced with the PHP reverse shell, and that the IP and PORT is changed according to our IP and our desired listening port:
 
-![image](https://user-images.githubusercontent.com/70077872/152495938-3446f01d-5977-45d4-9c14-c104ef5c6837.png)
+
 
 ![image](https://user-images.githubusercontent.com/70077872/152762635-bb95d4b0-710a-4567-b918-d58e29b95c24.png)
 
 
-
+![image](https://user-images.githubusercontent.com/70077872/152495938-3446f01d-5977-45d4-9c14-c104ef5c6837.png)
 
 
 ![image](https://user-images.githubusercontent.com/70077872/152495794-2651a028-68b2-4ed7-bf23-f2e5365c0312.png)
