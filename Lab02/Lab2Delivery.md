@@ -51,6 +51,8 @@ The `PORT` column lists all availble ports, which in this case are  22, 80 and 1
 
 ![port_scan](https://user-images.githubusercontent.com/72946914/152356071-995428fe-be9c-4fe4-83ca-b7526130de09.png)
 
+Answer: `IKT449{22,80,1337}`.
+
 
 ## Admin
 
@@ -60,9 +62,11 @@ By using the login password that was obtained in the `rockyou.txt` file using WP
 
 ![image](https://user-images.githubusercontent.com/70077872/152356337-2013f9ae-2120-476f-be58-a3a0516eb1e9.png)
 
-Then, after successfully logging in to the admin user, the flag will be visible on the dashboard. The flag is marked as (admin_access_is_not_for_ everyone) under "Your Recent Drafts".
+Then, after successfully logging in to the admin user, the flag will be visible on the dashboard. The flag is marked as IKT449{admin_access_is_not_for_everyone} under "Your Recent Drafts".
 
 ![image](https://user-images.githubusercontent.com/70077872/152356590-f2780792-8f93-4e09-8516-cd76fb041a90.png)
+
+Answer: `IKT449{admin_success_is_not_for_everyone}`.
 
 
 ## User
