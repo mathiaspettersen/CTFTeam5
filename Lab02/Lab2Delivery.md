@@ -35,19 +35,22 @@ Answer:`IKT449{1337}`
 
 ## Ports
 
-> What ports are open on the host? (answer in ascending order)
+> *What ports are open on the host? (answer in ascending order)*
 
 To figure out which ports were open, we chose to use `nmap`. This is a free and open security scanner which is used to gain information about hosts and running services on a network, includning information about open ports by performing port scanning. 
 
-We used `nmap` to scan our given target IP address, along with three different switches. `-T4` is used to specify the timing and performance. Since we wanted a specific and reliable scan, `-T4` was chosen before `-T5` as the latter tends to be too strong and fast, and can as a consequence omit important information. 
+We used `nmap` to scan our given target IP address, along with three different switches. The perfromed scan can be viewed in the screenshot bellow. 
 
-Next, to specify the service and version detection wanted, `-A` is used,  which includes an OS dectection, version detection, script scanning and traceroute. (Spesifisere mer hvorfor)
+ `-T4` is used to specify the timing and performance. Since we wanted a specific and reliable scan, `-T4` was chosen before `-T5` as the latter tends to be too strong and fast, and can as a consequence omit important information. 
 
-Finally, since we wanted information about all ports available, `-p-` states that we want information about all ports, i.e. from 0 to 65 535. 
+Next, to specify the service and version detection wanted, `-A` is used,  which includes an OS dectection, version detection, script scanning and traceroute. Looking at the screenshot, using `-A`is what enables the `VERSION` column at line five. In addition, all of the service protocols in the `SERVICE` column have been now verified, as opposed to if we had not used `-A`. 
 
-![image](https://user-images.githubusercontent.com/72946914/152356071-995428fe-be9c-4fe4-83ca-b7526130de09.png)
+Finally, since we wanted information about all ports available, `-p-` states that we want information about all ports, i.e. from 0 to 65 365. 
 
-The result of the scan can be viewed in the image above. The output states that port 22, 80 and 1337 are open ports, which in ascending order converts to the flag which is `IKT449{22,80,1338}`. 
+The `PORT` column lists all availble ports, which in this case are  22, 80 and 1337 . Thus, the flag is *IKT449{22,80,1337}*. 
+
+![port_scan](https://user-images.githubusercontent.com/72946914/152356071-995428fe-be9c-4fe4-83ca-b7526130de09.png)
+
 
 ## Admin
 
