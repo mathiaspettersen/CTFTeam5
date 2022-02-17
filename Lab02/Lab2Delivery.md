@@ -47,7 +47,7 @@ Next, to specify the service and version detection wanted, `-A` is used,  which 
 
 Finally, since we wanted information about all ports available, `-p-` states that we want information about all ports, i.e. from 0 to 65 365. 
 
-The `PORT` column lists all availble ports, which in this case are  22, 80 and 1337 . Thus, the flag is *IKT449{22,80,1337}*. 
+The `PORT` column lists all availble ports, which in this case are  22, 80 and 1337 .  
 
 ![port_scan](https://user-images.githubusercontent.com/72946914/152356071-995428fe-be9c-4fe4-83ca-b7526130de09.png)
 
