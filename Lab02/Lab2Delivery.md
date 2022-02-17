@@ -39,7 +39,7 @@ Flag:`IKT449{1337}`
 
 To figure out which ports were open, we chose to use `nmap`. This is a free and open security scanner which is used to gain information about hosts and running services on a network, includning information about open ports by performing port scanning. 
 
-We used `nmap` to scan our given target IP address, along with three different switches. The perfromed scan can be viewed in the screenshot bellow. 
+We used `nmap` to scan our given target IP address, along with three different switches. The perfromed scan can be viewed in the screenshot below. 
 
  `-T4` is used to specify the timing and performance. Since we wanted a specific and reliable scan, `-T4` was chosen before `-T5` as the latter tends to be too strong and fast, and can as a consequence omit important information. 
 
