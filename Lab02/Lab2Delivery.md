@@ -31,7 +31,7 @@ After a very short scan, the wpscan tool recognizes the WordPress administrator 
 
 This search shows that the password `ramirez` is located at line `1337` in the `rockyou.txt` wordlist. 
 
-Flag:`IKT449{1337}` 
+>**Flag:`IKT449{1337}`** 
 
 ## Ports
 
@@ -51,7 +51,7 @@ The `PORT` column lists all available ports, which in this case are  22, 80, and
 
 ![port_scan](https://user-images.githubusercontent.com/72946914/152356071-995428fe-be9c-4fe4-83ca-b7526130de09.png)
 
->"Flag: `IKT449{22,80,1337}`".
+>**Flag: `IKT449{22,80,1337}`**
 
 
 ## Admin
@@ -66,7 +66,7 @@ Then, after successfully logging in to the admin user, the flag will be visible 
 
 ![image](https://user-images.githubusercontent.com/70077872/152356590-f2780792-8f93-4e09-8516-cd76fb041a90.png)
 
-Flag: `IKT449{admin_success_is_not_for_everyone}`.
+>**Flag: `IKT449{admin_success_is_not_for_everyone}`**
 
 
 ## User
@@ -120,4 +120,4 @@ Once logging in with the password given, we can view `user.txt` and collect the 
 ![image](https://user-images.githubusercontent.com/70077872/152496009-95482ebb-11eb-4878-bd5d-b28e4a5ad649.png)
 
 
-Flag: `IKT449{great_job_root_will_come_later}`
+>**Flag: `IKT449{great_job_root_will_come_later}`**
