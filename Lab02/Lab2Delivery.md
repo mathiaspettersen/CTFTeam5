@@ -1,5 +1,5 @@
 ## Number
->*On which line in rockyou.txt do you find the correct password for the admin user in wordpress?*
+>*On which line in rockyou.txt do you find the correct password for the admin user in WordPress?*
 
 Knowing that the server is running WordPress on port 80 the tool wpscan can be used to scan the website and look for possible vulnerabilities and interesting directories or files. It is appropriate to use wpscan in this scenario as wpscan automates the tedious manual discovery of directories and interesting files. Using the wpscan tool a scan of the website can be performed using the command:
 
@@ -37,17 +37,17 @@ Flag:`IKT449{1337}`
 
 > *What ports are open on the host? (answer in ascending order)*
 
-To figure out which ports were open, we chose to use `nmap`. This is a free and open security scanner which is used to gain information about hosts and running services on a network, includning information about open ports by performing port scanning. 
+To figure out which ports were open, we chose to use `Nmap`. This is a free and open security scanner that is used to gain information about hosts and running services on a network, including information about open ports by performing port scanning. 
 
-We used `nmap` to scan our given target IP address, along with three different switches. The perfromed scan can be viewed in the screenshot below. 
+We used `Nmap` to scan our given target IP address, along with three different switches. The performed scan can be viewed in the screenshot below. 
 
  `-T4` is used to specify the timing and performance. Since we wanted a specific and reliable scan, `-T4` was chosen before `-T5` as the latter tends to be too strong and fast, and can as a consequence omit important information. 
 
-Next, to specify the service and version detection wanted, `-A` is used,  which includes an OS dectection, version detection, script scanning and traceroute. Looking at the screenshot, using `-A`is what enables the `VERSION` column at line five. In addition, all of the service protocols in the `SERVICE` column have been now verified, as opposed to if we had not used `-A`. 
+Next, to specify the service and version detection wanted, `-A` is used,  which includes OS detection, version detection, script scanning and traceroute. Looking at the screenshot, using `-A` is what enables the `VERSION` column at line five. In addition, all of the service protocols in the `SERVICE` column have been now verified, as opposed to if we had not used `-A`. 
 
 Finally, since we wanted information about all ports available, `-p-` states that we want information about all ports, i.e. from 0 to 65 365. 
 
-The `PORT` column lists all availble ports, which in this case are  22, 80 and 1337 .  
+The `PORT` column lists all available ports, which in this case are  22, 80, and 1337.  
 
 ![port_scan](https://user-images.githubusercontent.com/72946914/152356071-995428fe-be9c-4fe4-83ca-b7526130de09.png)
 
@@ -58,7 +58,7 @@ Flag: `IKT449{22,80,1337}`.
 
 >*Get access to the admin dashboard and provide the flag found.*
 
-By using the login password that was obtained in the `rockyou.txt` file using WPscan, acsess to the admin user will be gained using the correct username and password. First, enter the login details: Username: `admin`. Password: `ramirez`.
+By using the login password that was obtained in the `rockyou.txt` file using WPscan, access to the admin user will be gained using the correct username and password. First, enter the login details: Username: `admin`. Password: `ramirez`.
 
 ![image](https://user-images.githubusercontent.com/70077872/152356337-2013f9ae-2120-476f-be58-a3a0516eb1e9.png)
 
@@ -73,20 +73,20 @@ Flag: `IKT449{admin_success_is_not_for_everyone}`.
 
 >*Get access to the user account, remember what you saw in the logs on how to do this. Provide the flag in user.txt*
 
-After access has been gained to the Wordpress site, we have to do some additional steps to be able to gain terminal access to a user. As previously found in the logs, the user we want initial access to is `www-data`, which should be the default user running a webserver. This is because if `root` ran a webserver, all files would be accessible if the webserver is compromised. `www-data` is a user that has lower privileges, meaning a lower change of further damage after initial access.
+After access has been gained to the WordPress site, we have to do some additional steps to be able to gain terminal access to a user. As previously found in the logs, the user we want initial access to is `www-data`, which should be the default user running a webserver. This is because if `root` ran a webserver, all files would be accessible if the webserver is compromised. `www-data` is a user that has lower privileges, meaning a lower chance of further damage after initial access.
 
-As the logs also state, the attacker put a reverse shell within the `404.php` file within the `twentytwentyone` theme in Wordpress. This is a standard theme, which is also the only theme that is activated in this instance of Wordpress. The `404.php` file is a good file to replace with a reverse shell since it only shows error messages. Replacing other files like `functions.php` (which controls the whole theme) could result in the website not working properly, thus either raising an alarm towards the real owner or making it more difficult for us as attackers to utilize the reverse shell.
+As the logs also state, the attacker put a reverse shell within the `404.php` file within the `twentytwentyone` theme in WordPress. This is a standard theme, which is also the only theme that is activated in this instance of WordPress. The `404.php` file is a good file to replace with a reverse shell since it only shows error messages. Replacing other files like `functions.php` (which controls the whole theme) could result in the website not working properly, thus either raising an alarm towards the real owner or making it more difficult for us as attackers to utilize the reverse shell.
 
-> Why a reverse shell? A reverse shell enables the attacker to make the victim connect to us, making it more straightforward than gaining a regular shell. Since we already have access to the Wordpress site, using a reverse shell is one of the "easiest" ways of gaining a terminal connection, and enables us to elevate our privileges at a later stage.
+> Why a reverse shell? A reverse shell enables the attacker to make the victim connect to us, making it more straightforward than gaining a regular shell. Since we already have access to the WordPress site, using a reverse shell is one of the "easiest" ways of gaining a terminal connection, and enables us to elevate our privileges at a later stage.
 
-When access to the `404.php` file is made, one has to find a proper reverse shell script to enter. There are many different reverse shells based on language, terminal/non-terminal, and resources available. In this instance, we know the webserver runs PHP (as the file is named 404.php), making it feasible to find a reverse shell written in PHP. Doing a quick Google search for "reverse shell php" results in the Pentest Monkey's GitHub repository: https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php. This is a widely used script for PHP reverse shell, and is something we will try. The picture below showcases that the `404.php` file contents has been replaced with the PHP reverse shell, and that the IP and PORT is changed according to our IP and our desired listening port:
+When access to the `404.php` file is made, one has to find a proper reverse shell script to enter. There are many different reverse shells based on language, terminal/non-terminal, and resources available. In this instance, we know the webserver runs PHP (as the file is named 404.php), making it feasible to find a reverse shell written in PHP. Doing a quick Google search for "reverse shell PHP" results in the Pentest Monkey's GitHub repository: https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php. This is a widely used script for PHP reverse shell and is something we will try. The picture below showcases that the `404.php` file contents have been replaced with the PHP reverse shell and that the IP and PORT are changed according to our IP and our desired listening port:
 
 
 
 ![image](https://user-images.githubusercontent.com/70077872/152762635-bb95d4b0-710a-4567-b918-d58e29b95c24.png)
 
 
-Now that the file is updated and saved with our desired PHP reverse shell script, we have to set up a **listener** which listens on the connection coming from the victim's website server. Common binaries are **nc**, **ncat**, and **netcat**. In this instance we are using **ncat** as it comes from the same developers as **nmap**, and provides proper encryption within the reverse shell connection.
+Now that the file is updated and saved with our desired PHP reverse shell script, we have to set up a **listener** which listens to the connection coming from the victim's website server. Common binaries are **nc**, **ncat**, and **netcat**. In this instance, we are using **ncat** as it comes from the same developers as **nmap**, and provides proper encryption within the reverse shell connection.
 
 > The command for listening is: ncat -nlvp 9001 
 
@@ -97,7 +97,7 @@ The command has four switches; -nlvp. These are:
 * -v : Set verbosity level
 * -p : Specify source port to use
 
-Once the listener is set up, all is ready for the connection to take place. Activating the PHP reverse shell script has to be manually done by traversing into the general Wordpress directory that holds the themes and the specific file. The directory path is shown below:
+Once the listener is set up, all is ready for the connection to take place. Activating the PHP reverse shell script has to be manually done by traversing into the general WordPress directory that holds the themes and the specific file. The directory path is shown below:
 
 
 ![image](https://user-images.githubusercontent.com/70077872/152495938-3446f01d-5977-45d4-9c14-c104ef5c6837.png)
@@ -115,7 +115,7 @@ Within the user `user` folder, there are two text files; `note.txt` and `user.tx
 ![image](https://user-images.githubusercontent.com/70077872/152495542-ded4206f-a13d-4897-8b72-50a2aacb24c5.png)
 
 
-Once logging in with the password given, we are able to view `user.txt` and collect the final flag:
+Once logging in with the password given, we can view `user.txt` and collect the final flag:
 
 ![image](https://user-images.githubusercontent.com/70077872/152496009-95482ebb-11eb-4878-bd5d-b28e4a5ad649.png)
 
