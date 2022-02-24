@@ -41,6 +41,13 @@ messagebus:x:104:105::/nonexistent:/usr/sbin/nologin
 sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
 user:x:1000:1000::/home/user:/bin/bash
 
+Add root2 with the same credentials as root within /etc/passwd:
+
+![image](https://user-images.githubusercontent.com/70077872/155610378-ee58dba4-91d4-407c-87b3-8652cc020b80.png)
+
+
+
+
 
 
 
