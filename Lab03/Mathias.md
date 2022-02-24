@@ -45,6 +45,9 @@ Add root2 with the same credentials as root within /etc/passwd:
 
 ![image](https://user-images.githubusercontent.com/70077872/155610378-ee58dba4-91d4-407c-87b3-8652cc020b80.png)
 
+Switch to root2 and get the flag:
+
+![image](https://user-images.githubusercontent.com/70077872/155610553-17134f5c-afa8-48e8-a401-4a9ed9fc6c94.png)
 
 
 
