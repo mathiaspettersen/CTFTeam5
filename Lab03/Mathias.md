@@ -11,6 +11,11 @@ Change the path to /tmp so we can write to it
 
 ![image](https://user-images.githubusercontent.com/70077872/155609450-a1a6e110-9dbd-42fe-9c00-4e16b2e3348f.png)
 
+/etc/passwd:
+
+![image](https://user-images.githubusercontent.com/70077872/155610010-8fbb5c67-2455-41d7-a85a-f7d659898691.png)
+
+
 
 
 # Box 7
