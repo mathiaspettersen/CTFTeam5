@@ -18,6 +18,32 @@
 
 >**Flag:`IKT449{APT_APT_APT_m000re_l11ke_ATP}`**
 
+## 9003
+>*I made myself a nice little task which provides a fresh timestamp for me every minute. Why? No clue. Port: 9003*
+
+The task text mentiones a "which provides a fresh timestamp for me every minute" this sounds like a cronjob. Looking into the crontab file `/etc/crontab` does not reveal any special tasks that are executed. 
+
+![image](https://user-images.githubusercontent.com/59768512/155780901-9614fd96-3e83-4518-b7b3-91bedd21e6b4.png)
+
+Looking through the different crontab folders (`cron.d`, `cron.daily`, `cron.hourly`, `cron.monthly`, `cron.yearly` and `cron.weekly`) shows that within the folder `/etc/cron.d` a interesting file called `autorun` is present. This file seems to be the one the task text referce to. Looking at the file it seem to be a cronjob that is executed every minute, where a file called `/home/user/autorun.sh` is executed, this file is also executed with sudo privileges as the owner is `root`.
+
+![image](https://user-images.githubusercontent.com/59768512/155783149-d7031e90-6c20-4e16-b296-0b16727913ae.png)
+
+The `autorun.sh` file seems to be a script file which includes a not so interesting script, however looking at the file permissions the owner of the file is the user `user` which means that we are able to rewrite the script being executed. 
+
+![image](https://user-images.githubusercontent.com/59768512/155784259-e2d48e2d-c6dd-4ed8-8e73-81d51f68da70.png)
+
+A simple way to escalate the privilege of the user account is simply adding the account to the sudoers file. Given that the user account can edit the `autorun.sh` file it can simply be done by executing the commands:
+
+![image](https://user-images.githubusercontent.com/59768512/155784510-28f32f1f-9306-4f04-8533-8c151310140f.png)
+
+This means that the next time the cronjob is executed, which at the latest happens one minute after editing the file, the user account will be granted sudoer rights on the machine. After waiting a little while the user can simply change privilege to root using the command `sudo su`.
+
+![image](https://user-images.githubusercontent.com/59768512/155784713-cc22895e-0ef8-4ab7-bd92-9ee03c898504.png)
+
+>**Flag:`IKT449{cron_what?_more_like_root_on_demand}`**
+
+
 ## 9005
 >*I was told to run the file in my home directory, but it does not seem to do anything.. Do we have to provide some sort of ID or what? Port: 9005*
 
