@@ -56,10 +56,25 @@ The task text mentioned outdated applications. In order to get an idea of possib
 
 ![image](https://user-images.githubusercontent.com/59768512/155718341-ae8009ee-23d8-4ca4-afc0-551d261a86d3.png)
 
-The application `screen` is o present, this might be the vulnerable application
+The application `screen` is present, this might be the outdated application. Running the command `screen --version` shows that the application is running Screen GNU 4.05.00.
 
+![image](https://user-images.githubusercontent.com/59768512/155718660-48dafc26-750a-4f6d-99ff-f4a8de03495d.png)
 
-![image](https://user-images.githubusercontent.com/59768512/155718037-f2b0c826-cf0f-45db-83f7-be8389c1baf5.png)
+Looking online there seems to be a possible vulnerability in Screen 4.5.0. Especially the github page seems interesting.
+
+![image](https://user-images.githubusercontent.com/59768512/155718913-95c099cd-ba1b-4276-9d86-f7359eaef656.png)
+
+Looking into the github page a shellscript exploit is available and that infact Screen version 4.05.00 (GNU) is also vulnerable.
+
+![image](https://user-images.githubusercontent.com/59768512/155719086-44a3b8b6-b36d-4b45-afdf-93bd5a9cb9cb.png)
+
+On the machine the nano application is also available meaning that a copy of the `screen2root.sh` file can be created on the machine.
+
+![image](https://user-images.githubusercontent.com/59768512/155719344-b99aee4e-47e3-45b6-9362-cfeb1eaa4726.png)
+
+Making the shell script executable and executing it increases the privilege to root.
+
+![image](https://user-images.githubusercontent.com/59768512/155719472-e658dbe6-a4df-4955-b833-96daf1dabe4b.png)
 
 
 >**Flag:`IKT449{it_might_be_ugly_but_it_works}`**
