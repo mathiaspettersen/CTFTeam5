@@ -43,6 +43,38 @@ This means that the next time the cronjob is executed, which at the latest happe
 
 >**Flag:`IKT449{cron_what?_more_like_root_on_demand}`**
 
+## 9004
+>*Having a good backup of the home folder is quite important. Why would you not want all the files included? Port: 9004*
+
+As with task 9003 the task text seems to point to cronjob being executed to backup files. As with the last task the `/etc/cron.d/` folder contains a interesting file called `backup`.
+
+![image](https://user-images.githubusercontent.com/59768512/155786815-cb1ed51c-af20-4c99-8e9b-09ed2158dc47.png)
+
+Looking at this interesting file it seems to be running every half a minute and creating the `/tmp/files.bak` file and all the files in `/home/user` to it.
+
+![image](https://user-images.githubusercontent.com/59768512/155786966-e2061d6a-55f2-49de-84df-f631a1afc1a2.png)
+
+Looking at the `/tmp/files.bak` confirms this theory.
+
+![image](https://user-images.githubusercontent.com/59768512/155789582-93873aff-7aea-41ff-a459-bc58bcbfd02f.png)
+
+Given that the cronjob will save files located in the `/home/user` directory it might be possible to perform a cronob tar wildcard injection. A quick google search reveals that this is probably possible. 
+
+![image](https://user-images.githubusercontent.com/59768512/155792282-d9c5f99f-8c07-478b-8dca-3bbf6e9b53dc.png)
+
+Looking into this GitHub page the privelege escalation process seems fairly straight forward. One thing to note however is that a lot of the code that is being injected in this example is unessecary for a simple escalation to root and therefore only the line containing `echo 'echo "user ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers' > test.sh`, the two checkpoint lines and the create file for the archive.tar is necessary.
+
+![image](https://user-images.githubusercontent.com/59768512/155793728-686e59fc-131f-4e65-8c5a-cdf8ecd484ec.png)
+
+Simply adding the same lines to a file called test.sh:
+
+![image](https://user-images.githubusercontent.com/59768512/155794107-17a340fd-11af-46b5-9a63-5b899b2a945a.png)
+
+And running the command `tar cf /tmp/archive.tar *`, means that the next time the `backup` cronjob is executed the user account will have root access.
+
+![image](https://user-images.githubusercontent.com/59768512/155795186-f65967d2-b239-483b-9592-62ab64b50f9b.png)
+
+>**Flag:`IKT449{and_the_crowd_goes_WILD}`**
 
 ## 9005
 >*I was told to run the file in my home directory, but it does not seem to do anything.. Do we have to provide some sort of ID or what? Port: 9005*
