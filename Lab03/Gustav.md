@@ -1,4 +1,5 @@
 ## 9001
+>*I made a simple machine for ALL my users, this is a secure setup right? Port: 9001*
 
 ![image](https://user-images.githubusercontent.com/59768512/155337571-062b0dec-a2ef-4300-9458-90bcd8cfc9d7.png)
 
@@ -7,6 +8,7 @@
 >**Flag:`IKT449{t00_much_p0wa}`**
 
 ## 9002
+>*I got tired of telling people to GTFO when they asked for sudo permissions to install tools on their Linux machines. So I allowed APT to run as root on this machine. Should be fine right.. ? Port: 9002*
 
 ![image](https://user-images.githubusercontent.com/59768512/155338344-d5b9e046-c364-4bf5-a6e6-1233fc1ac327.png)
 
@@ -17,6 +19,7 @@
 >**Flag:`IKT449{APT_APT_APT_m000re_l11ke_ATP}`**
 
 ## 9005
+>*I was told to run the file in my home directory, but it does not seem to do anything.. Do we have to provide some sort of ID or what? Port: 9005*
 
 ![image](https://user-images.githubusercontent.com/59768512/155546194-4a7e181e-a8ea-4d1f-897e-293fbeae690f.png)
 
@@ -51,6 +54,7 @@ Running the `runme` executable, grants the shell sudo rights.
 
 
 ## 9007
+>*I might be a bit dated, but please stop screaming at me for not keeping all the applications up to date.. OK ?*
 
 The task text mentioned outdated applications. In order to get an idea of possible package that can be execute the command `find / -type f -perm -04000 -ls 2>/dev/null` was executed:
 
