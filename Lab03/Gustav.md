@@ -50,4 +50,18 @@ Running the `runme` executable, grants the shell sudo rights.
 >**Flag:`IKT449{show_me_your_id_please}`**
 
 
+## 9007
+
+The task text mentioned outdated applications. In order to get an idea of possible package that can be execute the command `find / -type f -perm -04000 -ls 2>/dev/null` was executed:
+
+![image](https://user-images.githubusercontent.com/59768512/155718341-ae8009ee-23d8-4ca4-afc0-551d261a86d3.png)
+
+The application `screen` is o present, this might be the vulnerable application
+
+
+![image](https://user-images.githubusercontent.com/59768512/155718037-f2b0c826-cf0f-45db-83f7-be8389c1baf5.png)
+
+
+>**Flag:`IKT449{it_might_be_ugly_but_it_works}`**
+
 
