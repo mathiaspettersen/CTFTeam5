@@ -50,7 +50,7 @@ As with task 9003 the task text seems to point to cronjob being executed to back
 
 ![image](https://user-images.githubusercontent.com/59768512/155786815-cb1ed51c-af20-4c99-8e9b-09ed2158dc47.png)
 
-Looking at this interesting file it seems to be running every half a minute and creating the `/tmp/files.bak` file and all the files in `/home/user` to it.
+Looking at this interesting file it seems to be running every half a minute and creating the `/tmp/files.bak` file and all the files within`/home/user` backup'ed into to it.
 
 ![image](https://user-images.githubusercontent.com/59768512/155786966-e2061d6a-55f2-49de-84df-f631a1afc1a2.png)
 
