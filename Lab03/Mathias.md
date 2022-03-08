@@ -21,7 +21,7 @@ By saving the file and running `su root2`, we are prompted with the root account
 ![image](https://user-images.githubusercontent.com/70077872/155610553-17134f5c-afa8-48e8-a401-4a9ed9fc6c94.png)
 
 
-
+>**Flag:`IKT449{permissions_are_hard}`** 
 
 
 
