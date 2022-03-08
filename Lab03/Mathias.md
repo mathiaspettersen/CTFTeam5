@@ -51,5 +51,13 @@ The website shows a local privilege escalation exploit that the regular user run
 
 ![bilde](https://user-images.githubusercontent.com/70077872/157318710-1f2f9bc2-9007-463d-86c8-5bdd452a80d6.png)
 
+Then, when the exploit is run, we get a `root` shell on the machine:
 
+![bilde](https://user-images.githubusercontent.com/70077872/157319878-f56a2af7-b9b8-4e19-ad41-59c6962df05f.png)
+
+This also allows us to collect the flag we need:
+
+![bilde](https://user-images.githubusercontent.com/70077872/157320034-b7179635-618b-4660-8ce3-d2035ec3a6d7.png)
+
+>**Flag:`IKT449{it_might_be_ugly_but_it_works}`**
 
