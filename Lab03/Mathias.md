@@ -35,6 +35,21 @@ The command showed some different binaries. While it shows many binaries, many o
 
 ![bilde](https://user-images.githubusercontent.com/70077872/157317198-109ae957-c06a-4fb6-b346-a9950079150a.png)
 
+Firstly, we tried to run `screen` with sudo, which did not work as user is not in the sudoers file:
+
+![bilde](https://user-images.githubusercontent.com/70077872/157318118-7f08b927-fb5b-49d0-a971-1519b41a6eb4.png)
+
 After taking a closer look at screen, we can try to view the version number of it to see if there are any active exploits for it. After looking at the version, it is apparent that it is `Screen version 4.05.00`:
 
 ![bilde](https://user-images.githubusercontent.com/70077872/157317818-70b52d45-5d6d-48c7-9d85-93957a493bae.png)
+
+A simple Google search for screen with the version number got a hit in `exploit-db` which is a vulnerability database:
+
+![bilde](https://user-images.githubusercontent.com/70077872/157318559-81569aad-ce1f-4191-85ca-aea32dc4b758.png)
+
+The website shows a local privilege escalation exploit that the regular user runs. This script creates a shell file and removes the dependency file `/etc/ld.so.preload`, and creates its own `ld.so.preload` and inserts the shellcode into there. Then, when `screen` is run, it runs with the SUID bit set, allowing us to elevate our privileges.
+
+![bilde](https://user-images.githubusercontent.com/70077872/157318710-1f2f9bc2-9007-463d-86c8-5bdd452a80d6.png)
+
+
+
