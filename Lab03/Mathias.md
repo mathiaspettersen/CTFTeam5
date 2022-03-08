@@ -26,6 +26,8 @@ Switch to root2 and get the flag:
 
 # Box 7
 
+>*I might be a bit dated, but please stop screaming at me for not keeping all the applications up to date.. OK ?*
+
 sudo version may be vulnerable. ran linpeas.sh:
 
 ![image](https://user-images.githubusercontent.com/70077872/155531464-cdabc693-da0b-4488-89bb-f611a8c50a43.png)
