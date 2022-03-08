@@ -29,6 +29,4 @@ By saving the file and running `su root2`, we are prompted with the root account
 
 >*I might be a bit dated, but please stop screaming at me for not keeping all the applications up to date.. OK ?*
 
-sudo version may be vulnerable. ran linpeas.sh:
 
-![image](https://user-images.githubusercontent.com/70077872/155531464-cdabc693-da0b-4488-89bb-f611a8c50a43.png)
