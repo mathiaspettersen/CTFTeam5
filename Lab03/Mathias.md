@@ -1,9 +1,8 @@
 # Box 6
 
->*I was tired of every user complaining about not being able to log in to X and Y account, 
->so I made the choice to let any user change any password. How? Well, that's something they will have to find out for themselves.*
+>*I was tired of every user complaining about not being able to log in to X and Y account, so I made the choice to let any user change any password. How? Well, that's something they will have to find out for themselves.*
 
-The task given says it has "made the choice to let any user change any password". The Linux password system if built up of two files: `passwd` and 
+The task given says it has "made the choice to let any user change any password". The Linux password system if built up of two files: `passwd` and `shadow`. The `passwd` file contains the users, their groups, their home directory, and which shell they are using. However, it does not contain the hash of the password to any of the users. The 
 
 /etc/passwd file is writeable:
 
