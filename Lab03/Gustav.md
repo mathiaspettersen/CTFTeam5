@@ -21,19 +21,19 @@
 ## 9003
 >*I made myself a nice little task which provides a fresh timestamp for me every minute. Why? No clue. Port: 9003*
 
-The task text mentiones a "which provides a fresh timestamp for me every minute" this sounds like a cronjob. Looking into the crontab file `/etc/crontab` does not reveal any special tasks that are executed. 
+The task text mentiones a task that: "provides a fresh timestamp every minute". When scheduling task in a Linux enviroment a common method is using cronjobs. Looking into the crontab file `/etc/crontab` does not reveal any special tasks that are executed. 
 
 ![image](https://user-images.githubusercontent.com/59768512/155780901-9614fd96-3e83-4518-b7b3-91bedd21e6b4.png)
 
-Looking through the different crontab folders (`cron.d`, `cron.daily`, `cron.hourly`, `cron.monthly`, `cron.yearly` and `cron.weekly`) shows that within the folder `/etc/cron.d` a interesting file called `autorun` is present. This file seems to be the one the task text referce to. Looking at the file it seem to be a cronjob that is executed every minute, where a file called `/home/user/autorun.sh` is executed, this file is also executed with sudo privileges as the owner is `root`.
+Looking through the different crontab folders (`cron.d`, `cron.daily`, `cron.hourly`, `cron.monthly`, `cron.yearly` and `cron.weekly`) shows that within the folder `/etc/cron.d` a interesting file called `autorun` is present. This file seems to be the one the task text referce to. Looking at the file it seem to be a cronjob that is executed every minute, where a file called `/home/user/autorun.sh` is executed. This file is also executed with sudo privileges as the owner is `root` meaning that any commands written in this file is executed will administrative privileges, which could be used to escalate privilege.
 
 ![image](https://user-images.githubusercontent.com/59768512/155783149-d7031e90-6c20-4e16-b296-0b16727913ae.png)
 
-The `autorun.sh` file seems to be a script file which includes a not so interesting script, however looking at the file permissions the owner of the file is the user `user` which means that we are able to rewrite the script being executed. 
+The `autorun.sh` file seems to be a script file which includes a not so interesting script that essential does what the task mentiones, however looking at the file permissions the owner of the file is the user `user` which means that we are able to rewrite the script being executed. 
 
 ![image](https://user-images.githubusercontent.com/59768512/155784259-e2d48e2d-c6dd-4ed8-8e73-81d51f68da70.png)
 
-A simple way to escalate the privilege of the user account is simply adding the account to the sudoers file. Given that the user account can edit the `autorun.sh` file it can simply be done by executing the commands:
+A simple way to escalate the privilege of the user account is simply adding the account to the sudoers file. Given that the user account can edit the `autorun.sh` file it can simply be done by running a couple of commands. Since there is no text editor on this machine, the echo command can be used instead using the commands `echo '#!/bin/bash' > autorun.sh` and `"echo 'user ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers"  >> autorun.sh`. The first command using the single greater than sign overwrites the file with the given string `#!/bin/bash` while the second command with two greater than signs appends ` user ALL=(ALL) NOPASSWD:ALL` to the end of the file. 
 
 ![image](https://user-images.githubusercontent.com/59768512/155784510-28f32f1f-9306-4f04-8533-8c151310140f.png)
 
@@ -46,11 +46,11 @@ This means that the next time the cronjob is executed, which at the latest happe
 ## 9004
 >*Having a good backup of the home folder is quite important. Why would you not want all the files included? Port: 9004*
 
-As with task 9003 the task text seems to point to cronjob being executed to backup files. As with the last task the `/etc/cron.d/` folder contains a interesting file called `backup`.
+As with task 9003 the task text seems to point to cronjob being executed to backup files and as with the last task the `/etc/cron.d/` folder also contains a interesting file this time called `backup`.
 
 ![image](https://user-images.githubusercontent.com/59768512/155786815-cb1ed51c-af20-4c99-8e9b-09ed2158dc47.png)
 
-Looking at this interesting file it seems to be running every half a minute and creating the `/tmp/files.bak` file and all the files within`/home/user` backup'ed into to it.
+Looking at this interesting file it seems to be running every half a minute and creating the `/tmp/files.bak` file and backup all the files within `/home/user` into to it.
 
 ![image](https://user-images.githubusercontent.com/59768512/155786966-e2061d6a-55f2-49de-84df-f631a1afc1a2.png)
 
@@ -58,21 +58,23 @@ Looking at the `/tmp/files.bak` confirms this theory.
 
 ![image](https://user-images.githubusercontent.com/59768512/155789582-93873aff-7aea-41ff-a459-bc58bcbfd02f.png)
 
-Given that the cronjob will save files located in the `/home/user` directory it might be possible to perform a cronob tar wildcard injection. A quick google search reveals that this is probably possible. 
+Given that the cronjob will save files located in the `/home/user` directory it might be possible to perform a cron tar wildcard injection. A quick google search reveals that this is probably possible. 
 
-![image](https://user-images.githubusercontent.com/59768512/155792282-d9c5f99f-8c07-478b-8dca-3bbf6e9b53dc.png)
+![image](https://user-images.githubusercontent.com/59768512/157516165-0f7c34a4-7f8a-4f84-a94d-2e2ffde5f862.png)
 
 Looking into this GitHub page the privelege escalation process seems fairly straight forward. One thing to note however is that a lot of the code that is being injected in this example is unessecary for a simple escalation to root and therefore only the line containing `echo 'echo "user ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers' > test.sh`, the two checkpoint lines and the create file for the archive.tar is necessary.
 
 ![image](https://user-images.githubusercontent.com/59768512/155793728-686e59fc-131f-4e65-8c5a-cdf8ecd484ec.png)
 
-Simply adding the same lines to a file called test.sh:
+Adding the same lines to a file called test.sh, and running the checkpoint commands:
 
 ![image](https://user-images.githubusercontent.com/59768512/155794107-17a340fd-11af-46b5-9a63-5b899b2a945a.png)
 
 And running the command `tar cf /tmp/archive.tar *`, means that the next time the `backup` cronjob is executed the user account will have root access.
 
 ![image](https://user-images.githubusercontent.com/59768512/155795186-f65967d2-b239-483b-9592-62ab64b50f9b.png)
+
+While there is an error saying that file cannot be created because "permission is denied", the privlege escalation still works.
 
 >**Flag:`IKT449{and_the_crowd_goes_WILD}`**
 
