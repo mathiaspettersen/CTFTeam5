@@ -81,35 +81,31 @@ While there is an error saying that file cannot be created because "permission i
 ## 9005
 >*I was told to run the file in my home directory, but it does not seem to do anything.. Do we have to provide some sort of ID or what? Port: 9005*
 
+Looking into the files contained in the `/home/user` directory, the described called `runme` seems to be compiled C file from the `runme.c` file.
+
 ![image](https://user-images.githubusercontent.com/59768512/155546194-4a7e181e-a8ea-4d1f-897e-293fbeae690f.png)
 
-Run runme seems to execute the id command.
+Running the `runme` file seems to produce output that is similar to that off the `id` executable executed by a root user. This means that file is executed with `root` privileges and that either the `runme` file is a copy of the `id` executable or it calls the `id` executable within the code. If the latter is the case altering the path used by the shell could possible make it use a fabricated version of the `id` executable. 
 
 ![image](https://user-images.githubusercontent.com/59768512/155546461-5acfea81-5d2c-41bc-8ab0-5a66a0eb0640.png)
 
-Altering the path used by the `runme` executable might trick it into running a fabricated version of the id command
-
+Before being able to create a "fake" `id` command a suitable writeable folder needs to be found where it can be created.
 
 Running the command: `find / -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u` finds writeable folders.
-`2>/dev/null` cleans error messages
-`cut -d "/" -f 2,3` 
-`grep -v proc` removes results related to processes
-`sort -u` sorts numerically and alphabetical
+
+In this command the part `2>/dev/null` cleans error messages by putting errors into /dev/null which discards it. Secondly the `cut -d "/" -f 2,3` command cuts the the output using the delimiter `/` and keeps the fields 2 and 3. The `grep -v proc` part removes results related to processes that are uninteressting for this privelege escalation technique. Finally the `sort -u` part sorts the output numerically and alphabetical making it easier to look for suitible folders.
 
 ![image](https://user-images.githubusercontent.com/59768512/155546802-a04f101c-dfa8-4cac-bbca-9b85a6fa6184.png)
 
-Adding the writeable folder `/tmp` to the path means that executable files will use programs present in that folder instead of the actual id command. This can be done using the command `export PATH=/tmp:$PATH` which adds the `/tmp` folder to the start of the path and therefore when the id command is called by the user or by a program, in this scenario `runeme`, uses the first path rather than the using the one within the `/usr/bin` folder. 
+Looking at the output the `/tmp` folder seems like a perfect directory to create the fabricated file. In order for the shell to use the `/tmp` instead of the original location of the `id` executable the `/tmp` directory needs to be put at the start of the path. This can be done using the command `export PATH=/tmp:$PATH` which adds the `/tmp` folder to the start of the path and therefore when the id command is called by the user or by a program, in this scenario `runeme`, uses the first path rather than the using the actual `id` executable within the `/usr/bin` folder. 
 
 ![image](https://user-images.githubusercontent.com/59768512/157209027-939f5a47-8f51-4dec-98ef-1c2e3b9828ae.png)
 
-
-Adding a altered `id` file and make it execute `/bin/bash` means that when the `runme` executable file is executed it will run the fabricated id file and spawn a sudo bash shell.
-`echo "/bin/bash" > id`
-`chmod 777 id`
+In order to actually make the `runme` executable call a fabricated `id` executable a file called `id` needs to be created in the `/tmp` directory. Creatin the `id` file and make it execute `/bin/bash` means that when the `runme` executable file is executed it will run the fabricated id file and spawn a sudo bash shell as the `runme` command calls the `id` executable with sudoer privileges. Making the `id` file execute `/bin/bash` can be done by running the command `echo "/bin/bash" > id` and making it executable with the command `chmod 777 id`.
 
 ![image](https://user-images.githubusercontent.com/59768512/155548678-670ba5ce-fce1-4dc3-92f9-dc9e5c154a2c.png))
 
-Running the `runme` executable, grants the shell sudo rights.
+Running the `runme` executable, after having done the above steps grants the shell sudo rights.
 
 ![image](https://user-images.githubusercontent.com/59768512/155549244-e5176232-28d0-4393-b12d-6a351186ea6a.png)
 
