@@ -9,7 +9,7 @@ Firstly, to find out what kind of priveleges that currently exist on user "user"
 
 This enables user "user" to switch user to "root", a higher priveleged user which is the system administrator. To do this, we run the command `sudo su`. To confirm that the "root" user has been acsessed, we can run the `ls` command and see which files that can now be acsessed after the switch. The flag can be found within the `root.txt` file. 
 
-
+Flag:IKT449{t00_much_p0wa}**
 
 ## 9002 - GTFO
 
