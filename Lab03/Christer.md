@@ -2,7 +2,7 @@ I made a simple machine for ALL my users, this is a secure setup right? Port: 90
 
 ![lab5 1](https://user-images.githubusercontent.com/46780028/157767743-969b7fc9-eafb-44c4-bd2f-e1a524853bdc.png)
 
-Firstly, to find out what kind of priveleges that currently exist on user "user". To do this, we run the command `sudo -1` and then enter the password for the user. Then, it lists that user "user" has acsess to all possiblle commands. This is proved by the system outputting `(ALL : ALL) ALL` as a response to the given command.
+Firstly, to find out what kind of priveleges that currently exist on user "user". To do this, we run the command `sudo -1` and then enter the password for the user. Then, it lists that user "user" has acsess to all possiblle commands. This is proved by the output  `(ALL : ALL) ALL` as a response to the given command.
 
 ![lab 5 2](https://user-images.githubusercontent.com/46780028/157767781-90d5a581-5131-4efd-baf5-b866bc06246d.png)
 
