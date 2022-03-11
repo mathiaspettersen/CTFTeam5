@@ -1,5 +1,5 @@
 ## 9001 - ALL
-I made a simple machine for ALL my users, this is a secure setup right? Port: 9001
+> I made a simple machine for ALL my users, this is a secure setup right? **Port: 9001**
 
 ![lab5 1](https://user-images.githubusercontent.com/46780028/157767743-969b7fc9-eafb-44c4-bd2f-e1a524853bdc.png)
 
@@ -13,6 +13,8 @@ Flag:IKT449{t00_much_p0wa}**
 
 
 ## 9002 -  GTFO
+
+> *I got tired of telling people to GTFO when they asked for sudo permissions to install tools on their Linux machines. So I allowed APT to run as root on this machine. Should be fine right.. ? **Port: 9002***
 When running `sudo -l` , it is discovered that the user may run `apt` as root, as also written in the description of the challenge. 
 
 ![sudo_l](https://user-images.githubusercontent.com/72946914/157649370-a624e621-e187-449b-8090-fdd071b44cbc.PNG)
