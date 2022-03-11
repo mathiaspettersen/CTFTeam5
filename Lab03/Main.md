@@ -11,8 +11,6 @@ This enables user "user" to switch user to "root", a higher priveleged user whic
 
 Flag:IKT449{t00_much_p0wa}**
 
-## 9005 - Got ID?
-
 
 ## 9002 -  GTFO
 When running `sudo -l` , it is discovered that the user may run `apt` as root, as also written in the description of the challenge. 
