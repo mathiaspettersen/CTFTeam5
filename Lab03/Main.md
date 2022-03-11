@@ -1,14 +1,14 @@
 ## 9001 - ALL
-> I made a simple machine for ALL my users, this is a secure setup right? **Port: 9001**
+> I made a simple machine for ALL my users, this is a secure setup, right? **Port: 9001**
 
 
 
-Firstly, to find out what kind of priveleges that currently exist on user "user". To do this, we run the command `sudo -1` and then enter the password for the user. Then, it lists that user "user" has acsess to all possiblle commands. This is proved by the output  `(ALL : ALL) ALL` as a response to the given command.
+Firstly, to find out what kind of privileges currently exist on user "user". To do this, we run the command `sudo -l` and then enter the password for the user. Then, it lists that user "user" has access to all possible commands. This is proved by the output  `(ALL : ALL) ALL` as a response to the given command.
 
 ![lab5 1](https://user-images.githubusercontent.com/46780028/157767743-969b7fc9-eafb-44c4-bd2f-e1a524853bdc.png)
 
 
-This enables user "user" to switch user to "root", a higher priveleged user which is the system administrator. To do this, we run the command `sudo su`. To confirm that the "root" user has been acsessed, we can run the `ls` command and see which files that can now be acsessed after the switch. The flag can be found within the `root.txt` file. 
+This enables user "user" to switch user to "root", a higher privileged user which is the system administrator. To do this, we run the command `sudo su`. To confirm that the "root" user has been accessed, we can run the `ls` command and see which files can now be accessed after the switch. The flag can be found within the `root.txt` file. 
 
 ![lab 5 2](https://user-images.githubusercontent.com/46780028/157767781-90d5a581-5131-4efd-baf5-b866bc06246d.png)
 
@@ -20,11 +20,11 @@ Flag:IKT449{t00_much_p0wa}**
 > *I got tired of telling people to GTFO when they asked for sudo permissions to install tools on their Linux machines. So I allowed APT to run as root on this machine. Should be fine right.. ? **Port: 9002***
 
 
-When running `sudo -l` , it is discovered that the user may run `apt` as root, as also written in the description of the challenge. 
+When running `sudo -l`, it is discovered that the user may run `apt` as root, as also written in the description of the challenge. 
 
 ![sudo_l](https://user-images.githubusercontent.com/72946914/157649370-a624e621-e187-449b-8090-fdd071b44cbc.PNG)
 
-Searching for *apt priv esc* led us to the website [GTFOBins](https://gtfobins.github.io/), with the description " (...) a curated list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems." Hence, it seemed like we were at the right place. 
+Searching for *apt privilege escalation* led us to the website [GTFOBins](https://gtfobins.github.io/), with the description " (...) a curated list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems." Hence, it seemed like we were at the right place. 
 
 Then, we searched for *apt* in GTFO, which we knew had root privileges. 
 
@@ -40,7 +40,7 @@ The site provides three different ways of achieving root access, in which the tw
 
 ## 9003 - Date check
 
->*I made myself a nice little task which provides a fresh timestamp for me every minute. Why? No clue. Port: 9003*
+>*I made myself a nice little task that provides a fresh timestamp for me every minute. Why? No clue. Port: 9003*
 
 The task text mentions a task that: "provides a fresh timestamp every minute". When scheduling tasks in a Linux environment a common method is using cronjobs. Looking into the crontab file `/etc/crontab` does not reveal any special tasks that are executed. 
 
@@ -118,11 +118,11 @@ In this command, the part `2>/dev/null` cleans error messages by putting errors 
 
 ![image](https://user-images.githubusercontent.com/59768512/155546802-a04f101c-dfa8-4cac-bbca-9b85a6fa6184.png)
 
-Looking at the output the `/tmp` folder seems like a perfect directory to create the fabricated file. For the shell to use the `/tmp` instead of the original location of the `id` executable the `/tmp` directory needs to be put at the start of the path. This can be done using the command `export PATH=/tmp:$PATH` which adds the `/tmp` folder to the start of the path and therefore when the id command is called by the user or by a program, in this scenario `runeme`, uses the first path rather than the using the actual `id` executable within the `/usr/bin` folder. 
+Looking at the output the `/tmp` folder seems like a perfect directory to create the fabricated file. For the shell to use the `/tmp` instead of the original location of the `id` executable the `/tmp` directory needs to be put at the start of the path. This can be done using the command `export PATH=/tmp:$PATH` which adds the `/tmp` folder to the start of the path and therefore when the id command is called by the user or by a program, in this scenario `runme`, uses the first path rather than the using the actual `id` executable within the `/usr/bin` folder. 
 
 ![image](https://user-images.githubusercontent.com/59768512/157209027-939f5a47-8f51-4dec-98ef-1c2e3b9828ae.png)
 
-To actually make the `runme` executable call a fabricated `id` executable, a file called `id` needs to be created in the `/tmp` directory. Creatin the `id` file and making it execute `/bin/bash` means that when the `runme` executable file is executed it will run the fabricated id file and spawn a sudo bash shell as the `runme` command calls the `id` executable with sudoer privileges. Making the `id` file execute `/bin/bash` can be done by running the command `echo "/bin/bash" > id` and make it executable with the command `chmod 777 id`.
+To actually make the `runme` executable call a fabricated `id` executable, a file called `id` needs to be created in the `/tmp` directory. Creatin the `id` file and making it execute `/bin/bash` means that when the `runme` executable file is executed it will run the fabricated id file and spawn a sudo bash shell as the `runme` command calls the `id` executable with sudoer privileges. Making the `id` file execute `/bin/bash` can be done by running the command `echo "/bin/bash" > id` and making it executable with the command `chmod 777 id`.
 
 ![image](https://user-images.githubusercontent.com/59768512/155548678-670ba5ce-fce1-4dc3-92f9-dc9e5c154a2c.png))
 
@@ -134,19 +134,19 @@ Running the `runme` executable, after having done the above steps grants the she
 
 ## 9006 - Easy Access
 
->*I was tired of every user complaining about not being able to log in to X and Y account, so I made the choice to let any user change any password. How? Well, that's something they will have to find out for themselves.*
+>*I was tired of every user complaining about not being able to log in to X and Y accounts, so I made the choice to let any user change any password. How? Well, that's something they will have to find out for themselves.*
 
-The task given says it has "made the choice to let any user change any password". The Linux password system is built up of two files: `passwd` and `shadow`. The `passwd` file contains the users, their groups, their home directory, and which shell they are using. However, it does not contain the hash of the password to any of the users. The `shadow` file contains the same information as `passwd`, in addition to the hashed passwords of the users that are able to create a password. Generally, `passwd` is viewable, `shadow` is not viewable, and both are not writeable. If any of those are writeable, any user can add users and change groups of any user.
+The task given says it has "made the choice to let any user change any password". The Linux password system is built up of two files: `passwd` and `shadow`. The `passwd` file contains the users, their groups, their home directory, and which shell they are using. However, it does not contain the hash of the password to any of the users. The `shadow` file contains the same information as `passwd`, in addition to the hashed passwords of the users that can create a password. Generally, `passwd` is viewable, `shadow` is not viewable, and both are not writeable. If any of those are writeable, any user can add users and change the groups of any user.
 
 When further examining the files, it is apparent that `/etc/passwd` is writeable. This means we can add another root user to try to gain root privileges with another account:
 
 ![image](https://user-images.githubusercontent.com/70077872/155609450-a1a6e110-9dbd-42fe-9c00-4e16b2e3348f.png)
 
-As also seen below, the root user is part of the `root` group which grants the user with superuser privileges. This means it has full controll over the machine and can perform any command it wants:
+As also seen below, the root user is part of the `root` group which grants the user superuser privileges. This means it has full control over the machine and can perform any command it wants:
 
 ![image](https://user-images.githubusercontent.com/70077872/155610010-8fbb5c67-2455-41d7-a85a-f7d659898691.png)
 
-To add another user, we firstly used the text editor `nano` to open the file, and editing it to include a `root2` user which has the exact same privileges as `root`, just with no passwd to begin with (hence there is no 'x' where other users have it):
+To add another user, we firstly used the text editor `nano` to open the file, and edited it to include a `root2` user which has the exact same privileges as `root`, just with no passwd to begin with (hence there is no 'x' where other users have it):
 
 ![image](https://user-images.githubusercontent.com/70077872/155610378-ee58dba4-91d4-407c-87b3-8652cc020b80.png)
 
@@ -165,7 +165,7 @@ By saving the file and running `su root2`, we are prompted with the root account
 
 This box did not have any immediate low-hanging fruit for us to grab at, so we tried to look at which binaries we could run with root permissions. The command `find / -type f -perm -04000 -ls 2>/dev/null` is a command that searches for binaries that we can run with root permissions. The command searches from `/` (the top directory in Linux, allowing us to search for all files), `-type f` (searches for regular files), `-perm -04000` (shows the set-user-ID execute bits), and `2>/dev/null` (redirects error messages to show a cleaner output).
 
-The command showed some different binaries. While it shows many binaries, many of them do not have SUID exploits, or do not lead to a direct privilege escalation for the regular user. The most interesting binary was the `screen` binary, which stands out from the regular binaries that usually are shown when running the `find` command. The name also looks similar to the task name, which is `SCREAM`:
+The command showed some different binaries. While it shows many binaries, many of them do not have SUID exploits or do not lead to a direct privilege escalation for the regular user. The most interesting binary was the `screen` binary, which stands out from the regular binaries that usually are shown when running the `find` command. The name also looks similar to the task name, which is `SCREAM`:
 
 ![bilde](https://user-images.githubusercontent.com/70077872/157317198-109ae957-c06a-4fb6-b346-a9950079150a.png)
 
@@ -173,11 +173,11 @@ Firstly, we tried to run `screen` with sudo, which did not work as user is not i
 
 ![bilde](https://user-images.githubusercontent.com/70077872/157318118-7f08b927-fb5b-49d0-a971-1519b41a6eb4.png)
 
-After taking a closer look at screen, we can try to view the version number of it to see if there are any active exploits for it. After looking at the version, it is apparent that it is `Screen version 4.05.00`:
+After taking a closer look at `screen`, we can try to view the version number of it to see if there are any active exploits for it. After looking at the version, it is apparent that it is `Screen version 4.05.00`:
 
 ![bilde](https://user-images.githubusercontent.com/70077872/157317818-70b52d45-5d6d-48c7-9d85-93957a493bae.png)
 
-A simple Google search for screen with the version number got a hit in `exploit-db` which is a vulnerability database:
+A simple Google search for `screen` with the version number got a hit in `exploit-db` which is a vulnerability database:
 
 ![bilde](https://user-images.githubusercontent.com/70077872/157318559-81569aad-ce1f-4191-85ca-aea32dc4b758.png)
 
