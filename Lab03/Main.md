@@ -12,7 +12,7 @@ This enables user "user" to switch user to "root", a higher privileged user whic
 
 ![lab 5 2](https://user-images.githubusercontent.com/46780028/157767781-90d5a581-5131-4efd-baf5-b866bc06246d.png)
 
-Flag:IKT449{t00_much_p0wa}**
+>**Flag:`IKT449{t00_much_p0wa}`**
 
 
 ## 9002 -  GTFO
