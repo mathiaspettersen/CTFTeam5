@@ -1,4 +1,4 @@
-##
+## 4003 - all strings attached
 
 ![image](https://user-images.githubusercontent.com/59768512/158986258-1995798f-095e-423f-a5c5-549c66ef5105.png)
 
@@ -13,7 +13,7 @@ first + reverse second + &second
 
 
 
-## 4003 - all strings attached
+## 4004 - INTelligence
 
 
 Running the attached file seems to ask for a PIN code and returning "no" if the PIN code is wrong
@@ -37,3 +37,10 @@ Looking at lines 20 and 21 the libarary function `strcat` gets called and the ad
 ![image](https://user-images.githubusercontent.com/59768512/158984306-202f5e3a-22e2-4a8c-be52-188914d4742a.png)
 
 Using this pin confirms the theory. 
+
+## 4005 - screw it
+
+210
+
+![image](https://user-images.githubusercontent.com/59768512/159141285-91a3e03a-2321-4c94-92b1-1dd764d771ea.png)
+
