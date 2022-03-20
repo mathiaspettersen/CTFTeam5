@@ -44,3 +44,29 @@ Using this pin confirms the theory.
 
 ![image](https://user-images.githubusercontent.com/59768512/159141285-91a3e03a-2321-4c94-92b1-1dd764d771ea.png)
 
+## PY - 01
+
+String to decimal to hexadecimal, add `secret_number` to decimal value.
+
+![image](https://user-images.githubusercontent.com/59768512/159143200-5955d8aa-e21c-42d6-810d-35c8518c852f.png)
+
+
+Starts with "I"
+
+Unicode character of "I"
+
+![image](https://user-images.githubusercontent.com/59768512/159143136-40e81d0f-f3c7-4d1a-9199-36cf3dffcb28.png)
+
+First encrypted is `0xb4`
+
+![image](https://user-images.githubusercontent.com/59768512/159143158-20607207-df29-423e-a6bf-a285ce99a949.png)
+
+180-73= 107
+
+`secret_number=107`
+
+code 
+
+![image](https://user-images.githubusercontent.com/59768512/159143186-f7f26125-4620-4193-9d12-1c1558f269b8.png)
+
+
