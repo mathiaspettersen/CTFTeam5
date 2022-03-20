@@ -69,4 +69,33 @@ code
 
 ![image](https://user-images.githubusercontent.com/59768512/159143186-f7f26125-4620-4193-9d12-1c1558f269b8.png)
 
+## PY - 02
+
+secret contains `secret_number_1`, `secret_number_2` and `flag`
+
+![image](https://user-images.githubusercontent.com/59768512/159176591-d50a7a3a-cbda-43ea-9eb2-648c18bb5dce.png)
+
+Adds unicode character decimal representative to file in addition to a adding secret_number_1.
+
+![image](https://user-images.githubusercontent.com/59768512/159176654-cb2f4cb7-a955-4a31-b1ba-b32847bc2aab.png)
+
+Reverses `enc` list into a list called `cne`.
+
+![image](https://user-images.githubusercontent.com/59768512/159176749-e4b2545b-971c-4b56-bbe4-c9ad6c27eac0.png)
+
+First adds all odd entries into list, then all even entries.
+
+![image](https://user-images.githubusercontent.com/59768512/159176780-38fdd619-b9e3-423c-9385-8fc5d70c90c9.png)
+
+Final prints (or in the case of the `task7.txt` writes to file) while subtracting `secret_number_2` from the individual entries.
+
+![image](https://user-images.githubusercontent.com/59768512/159176855-8e37c7be-18dc-4d3c-bfdd-49327144fc7b.png)
+
+
+73-59 = 14, secret_number_1 - secret_number_2 = 14
+
+
+code 
+
+![image](https://user-images.githubusercontent.com/59768512/159176468-9e8d28ae-7c06-4c0b-9f82-cc91ae5e1b94.png)
 
