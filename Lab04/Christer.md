@@ -12,3 +12,9 @@ Finally, "cat" is used on `flag.txt` fiile to open it, thereby revealing the fla
 
 ## 4003 - all strings attached
 
+![image](https://user-images.githubusercontent.com/46780028/160911603-3691bb57-8752-4a26-b3cc-273604ea5573.png)
+
+![image](https://user-images.githubusercontent.com/46780028/160911657-47c0dbad-b584-4daa-b8c4-22f7e36a4996.png)
+
+![image](https://user-images.githubusercontent.com/46780028/160911690-9f4a0348-6286-40a6-8365-ec22cb6397c0.png)
+
