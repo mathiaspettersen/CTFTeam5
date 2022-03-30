@@ -10,7 +10,7 @@ Finally, "cat" is used on `flag.txt` fiile to open it, thereby revealing the fla
 
 
 
-## 4003 - all strings attached
+## 4003 - All strings attached
 
 ![image](https://user-images.githubusercontent.com/46780028/160911603-3691bb57-8752-4a26-b3cc-273604ea5573.png)
 
